@@ -1,5 +1,5 @@
 require "cloud_scrape/version"
 
-module CloudScrape
+class CloudScrape
   # Your code goes here...
 end
