@@ -81,6 +81,10 @@ client.executions.result(execution_id)
 client.executions.remove(execution_id)
 ```
 
+## Postman File
+
+[Download](./postman_collection) and add the Postman File for API endpoints.
+
 ## Testing
 
 Ensure `CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE` and `CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE` environment variable is set when recording VCR cassettes.
