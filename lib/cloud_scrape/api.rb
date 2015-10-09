@@ -1,6 +1,7 @@
 require "digest"
 require "faraday"
 require "faraday_middleware"
+require "faraday/conductivity"
 require "faraday_middleware/multi_json"
 
 class CloudScrape
@@ -25,6 +26,7 @@ class CloudScrape
       connection(domain).post do |req|
         req.url URI.escape(url)
         req.body = URI.encode_www_form(options)
+        req.headers["Content-Type"] = "application/json"
       end
     end
 
@@ -54,8 +56,8 @@ class CloudScrape
 
         faraday.request :request_headers,
                         accept: "application/json",
-                        x_cloud_scrape_access: access_key,
-                        x_cloud_scrape_account: account_id,
+                        "X-CloudScrape-Access" => access_key,
+                        "X-CloudScrape-Account" => account_id,
                         content_type: "application/json"
 
         if CloudScrape.configuration.verbose

@@ -10,11 +10,14 @@ RSpec.configure do |config|
 
     CloudScrape.configuration.account_id =
       ENV["CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE"]
+
+    CloudScrape.configuration.verbose = false
   end
 
   config.after do
     CloudScrape.configuration.api_key = nil
     CloudScrape.configuration.account_id = nil
+    CloudScrape.configuration.verbose = false
   end
 end
 

@@ -32,7 +32,7 @@ RSpec.describe CloudScrape::API do
     let(:options) { { key: "value" } }
 
     let(:connection) { double("Faraday") }
-    let(:request) { double("Faraday::Request") }
+    let(:request) { double("Faraday::Request", headers: {}) }
     let(:headers) { {} }
 
     it "calls off to Faraday", :aggregate_failures do

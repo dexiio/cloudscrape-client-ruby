@@ -4,7 +4,7 @@ describe CloudScrape::RunDTO do
   subject(:run) { described_class.for(method: :get, id: id, url: url) }
 
   let(:id) { "tE2e9y7J-eyFiOAKaivrxsMl" }
-  let(:url) { "executions" }
+  let(:url) { "execute" }
   let(:response) { double("Faraday::Response", body: {}) }
 
   it "calls API with expected arguments" do

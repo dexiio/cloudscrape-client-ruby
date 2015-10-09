@@ -7,7 +7,7 @@ class CloudScrape
     end
 
     def execute
-      RunDTO.for(id: id, url: "executions")
+      RunDTO.for(id: id, url: "execute", method: :post).fetch(:_id)
     end
 
     private
