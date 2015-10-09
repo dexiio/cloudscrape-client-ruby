@@ -26,7 +26,8 @@ CloudScrape.configure do |config|
   config.base_url = "https://app.cloudscrape.com/api/"
   config.api_key = "pol6BFzsASYw4gQBl02b24nt"
   config.account_id = "a814a8r2-a664-4rcb-759c-9de21744117a"
-  config.user_agent = "MY-AGENT/1.0"
+  config.user_agent_app = "MY-AGENT"
+  config.user_agent_version = "1.0"
   config.timeout = 60000
   config.verbose = true
   config.log = true
@@ -40,7 +41,8 @@ Some confirmation can be set by environment variables:
 CLOUD_SCRAPE_CLIENT_BASE_URL="https://app.cloudscrape.com/api/"
 CLOUD_SCRAPE_CLIENT_API_KEY="pol6BFzsASYw4gQBl02b24nt"
 CLOUD_SCRAPE_CLIENT_ACCOUNT_ID="a814a8r2-a664-4rcb-759c-9de21744117a"
-CLOUD_SCRAPE_CLIENT_USER_AGENT="MY-AGENT/1.0"
+CLOUD_SCRAPE_CLIENT_USER_AGENT_APP="MY-AGENT"
+CLOUD_SCRAPE_CLIENT_USER_AGENT_VERSION="1.0"
 CLOUD_SCRAPE_CLIENT_TIMEOUT=60000
 CLOUD_SCRAPE_CLIENT_VERBOSE=true
 CLOUD_SCRAPE_CLIENT_LOG=true
@@ -48,7 +50,8 @@ CLOUD_SCRAPE_CLIENT_LOG=true
 
 * `base_url` sets the CloudScrape API url `https://app.cloudscrape.com/api/`
 * `api_key` sets the CloudScrape API Key `nil`
-* `user_agent` sets the UserAgent sent to CloudScrape `CS-RUBY-CLIENT/1.0`
+* `user_agent_app` sets the UserAgent app sent to CloudScrape `CS-RUBY-CLIENT`
+* `user_agent_version` sets the UserAgent version sent to CloudScrape `1.0`
 * `timeout` sets the CloudScrape API request timeout `3600`
 * `verbose` should all output be printed to STDOUT `false`
 * `log` should log message be printed `false`
@@ -78,9 +81,13 @@ client.executions.result(execution_id)
 client.executions.remove(execution_id)
 ```
 
+## Postman File
+
+[Download](./postman_collection) and add the Postman File for API endpoints.
+
 ## Testing
 
-Ensure all environment variables are set before recording new VCR cassettes.
+Ensure `CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE` and `CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE` environment variable is set when recording VCR cassettes.
 
     # Includes Rubocop
     $ bin/test

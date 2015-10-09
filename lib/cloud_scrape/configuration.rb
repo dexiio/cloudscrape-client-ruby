@@ -15,7 +15,8 @@ class CloudScrape
       attr_accessor :base_url,
                     :api_key,
                     :account_id,
-                    :user_agent,
+                    :user_agent_app,
+                    :user_agent_version,
                     :timeout,
                     :verbose,
                     :log,
@@ -23,7 +24,8 @@ class CloudScrape
 
       def initialize # rubocop:disable Metrics/AbcSize
         self.base_url = base_url_default
-        self.user_agent = user_agent_default
+        self.user_agent_app = user_agent_app_default
+        self.user_agent_version = user_agent_version_default
         self.timeout = timeout_default
 
         self.api_key = ENV["CLOUD_SCRAPE_CLIENT_API_KEY"]
@@ -41,8 +43,12 @@ class CloudScrape
           "https://app.cloudscrape.com/api/"
       end
 
-      def user_agent_default
-        ENV["CLOUD_SCRAPE_CLIENT_USER_AGENT"] || "CS-RUBY-CLIENT/1.0"
+      def user_agent_app_default
+        ENV["CLOUD_SCRAPE_CLIENT_USER_AGENT_APP"] || "CS-RUBY-CLIENT"
+      end
+
+      def user_agent_version_default
+        ENV["CLOUD_SCRAPE_CLIENT_USER_AGENT_VERSION"] || "1.0"
       end
 
       def timeout_default

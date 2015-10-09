@@ -18,4 +18,12 @@ RSpec.configure do |config|
     mocks.syntax = :expect
     mocks.verify_partial_doubles = true
   end
+
+  config.before do
+    CloudScrape.configuration.api_key = "MY_API_KEY"
+  end
+
+  config.after do
+    CloudScrape.configuration.api_key = nil
+  end
 end
