@@ -10,6 +10,10 @@ class CloudScrape
       ExecutionDTO.for(id: id, url: "result", method: :get)
     end
 
+    def remove
+      ExecutionDTO.for(id: id, url: "", method: :delete)
+    end
+
     private
 
     attr_reader :id
