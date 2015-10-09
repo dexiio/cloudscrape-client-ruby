@@ -42,19 +42,21 @@ class CloudScrape
       CloudScrape.configuration.account_id
     end
 
+    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/MethodLength
     def connection(domain)
       Faraday.new(url: domain) do |faraday|
         faraday.request :url_encoded
 
         faraday.request :user_agent,
-          app: CloudScrape.configuration.user_agent_app,
-          version: CloudScrape.configuration.user_agent_version
+                        app: CloudScrape.configuration.user_agent_app,
+                        version: CloudScrape.configuration.user_agent_version
 
         faraday.request :request_headers,
-          accept: "application/json",
-          x_cloud_scrape_access: access_key,
-          x_cloud_scrape_account: account_id,
-          content_type: "application/json"
+                        accept: "application/json",
+                        x_cloud_scrape_access: access_key,
+                        x_cloud_scrape_account: account_id,
+                        content_type: "application/json"
 
         if CloudScrape.configuration.verbose
           faraday.response :logger, CloudScrape.configuration.logger
@@ -67,5 +69,7 @@ class CloudScrape
         faraday.adapter Faraday.default_adapter
       end
     end
+    # rubocop:enable Metrics/AbcSize
+    # rubocop:enable Metrics/MethodLength
   end
 end

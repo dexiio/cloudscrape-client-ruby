@@ -77,12 +77,19 @@ RSpec.describe CloudScrape::Configure do
     end
 
     it "returns altered" do
-      instance.configure { |config| config.user_agent_app = new_user_agent_app }
+      instance.configure do |config|
+        config.user_agent_app = new_user_agent_app
+      end
+
       expect(subject).to eq(new_user_agent_app)
     end
 
     it "returns from ENV Var" do
-      stub_const("ENV", "CLOUD_SCRAPE_CLIENT_USER_AGENT_APP" => env_var_user_agent_app)
+      stub_const(
+        "ENV",
+        "CLOUD_SCRAPE_CLIENT_USER_AGENT_APP" => env_var_user_agent_app
+      )
+
       expect(subject).to eq(env_var_user_agent_app)
     end
   end
@@ -98,12 +105,19 @@ RSpec.describe CloudScrape::Configure do
     end
 
     it "returns altered" do
-      instance.configure { |config| config.user_agent_version = new_user_agent_version }
+      instance.configure do |config|
+        config.user_agent_version = new_user_agent_version
+      end
+
       expect(subject).to eq(new_user_agent_version)
     end
 
     it "returns from ENV Var" do
-      stub_const("ENV", "CLOUD_SCRAPE_CLIENT_USER_AGENT_VERSION" => env_var_user_agent_version)
+      stub_const(
+        "ENV",
+        "CLOUD_SCRAPE_CLIENT_USER_AGENT_VERSION" => env_var_user_agent_version
+      )
+
       expect(subject).to eq(env_var_user_agent_version)
     end
   end

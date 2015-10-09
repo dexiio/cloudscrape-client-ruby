@@ -83,7 +83,7 @@ client.executions.remove(execution_id)
 
 ## Testing
 
-Ensure all environment variables are set before recording new VCR cassettes.
+Ensure `CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE` and `CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE` environment variable is set when recording VCR cassettes.
 
     # Includes Rubocop
     $ bin/test
