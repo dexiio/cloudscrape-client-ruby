@@ -66,24 +66,45 @@ RSpec.describe CloudScrape::Configure do
     end
   end
 
-  describe "#user_agent" do
-    subject { instance.configuration.user_agent }
+  describe "#user_agent_app" do
+    subject { instance.configuration.user_agent_app }
 
-    let(:new_user_agent) { "MY-USER-AGENT/2.0" }
-    let(:env_var_user_agent) { "MY-USER-AGENT/3.0" }
+    let(:new_user_agent_app) { "MY-USER-AGENT" }
+    let(:env_var_user_agent_app) { "MY-AGENT" }
 
     it "returns default" do
-      expect(subject).to eq("CS-RUBY-CLIENT/1.0")
+      expect(subject).to eq("CS-RUBY-CLIENT")
     end
 
     it "returns altered" do
-      instance.configure { |config| config.user_agent = new_user_agent }
-      expect(subject).to eq(new_user_agent)
+      instance.configure { |config| config.user_agent_app = new_user_agent_app }
+      expect(subject).to eq(new_user_agent_app)
     end
 
     it "returns from ENV Var" do
-      stub_const("ENV", "CLOUD_SCRAPE_CLIENT_USER_AGENT" => env_var_user_agent)
-      expect(subject).to eq(env_var_user_agent)
+      stub_const("ENV", "CLOUD_SCRAPE_CLIENT_USER_AGENT_APP" => env_var_user_agent_app)
+      expect(subject).to eq(env_var_user_agent_app)
+    end
+  end
+
+  describe "#user_agent_version" do
+    subject { instance.configuration.user_agent_version }
+
+    let(:new_user_agent_version) { "2.0" }
+    let(:env_var_user_agent_version) { "3.0" }
+
+    it "returns default" do
+      expect(subject).to eq("1.0")
+    end
+
+    it "returns altered" do
+      instance.configure { |config| config.user_agent_version = new_user_agent_version }
+      expect(subject).to eq(new_user_agent_version)
+    end
+
+    it "returns from ENV Var" do
+      stub_const("ENV", "CLOUD_SCRAPE_CLIENT_USER_AGENT_VERSION" => env_var_user_agent_version)
+      expect(subject).to eq(env_var_user_agent_version)
     end
   end
 
