@@ -1,7 +1,7 @@
 require "cloud_scrape/run_dto"
 
 class CloudScrape
-  class Run
+  class Runs
     def initialize(id:)
       @id = id
     end

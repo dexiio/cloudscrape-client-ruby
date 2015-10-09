@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe CloudScrape::Run do
+describe CloudScrape::Runs do
   let(:instance) { described_class.new(id: id) }
 
   let(:id) { "tE2e9y7J-eyFiOAKaivrxsMl" }
