@@ -20,7 +20,7 @@ RSpec.configure do |config|
   end
 
   config.before do
-    CloudScrape.configuration.api_key = 'MY_API_KEY'
+    CloudScrape.configuration.api_key = "MY_API_KEY"
   end
 
   config.after do

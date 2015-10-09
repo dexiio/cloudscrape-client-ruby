@@ -1,4 +1,4 @@
-require 'cloud_scrape/api'
+require "cloud_scrape/api"
 
 class CloudScrape
   class DTO
@@ -31,7 +31,7 @@ class CloudScrape
         url: endpoint,
         options: {
           api_key: api_key,
-          format: 'json'
+          format: "json"
         }.merge(params)
       ).body
     end
@@ -41,7 +41,7 @@ class CloudScrape
     end
 
     def endpoint
-      fail NotImplementedError, 'Inheriting class must implement'
+      fail NotImplementedError, "Inheriting class must implement"
     end
 
     private
