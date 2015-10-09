@@ -1,6 +1,6 @@
 # CloudScrape Ruby Client
 
-Wrapper for CloudScrape API. 
+Wrapper for CloudScrape API.
 
 * [API Documentation](https://app.cloudscrape.com/#/api)
 * [Support](https://cloudscrape.zendesk.com/hc/en-us)
@@ -18,7 +18,7 @@ And then execute:
 Or install it yourself as:
 
     $ gem install cloud_scrape
-    
+
 ## Configuration
 
 ``` ruby
@@ -33,7 +33,7 @@ CloudScrape.configure do |config|
   config.logger = Rails.logger
 end
 ```
-    
+
 Some confirmation can be set by environment variables:
 
 ``` bash
@@ -61,7 +61,7 @@ CLOUND_SCRAPE_CLIENT_LOG=true
 client = CloudScrape.new(
   api_key: "pol6BFzsASYw4gQBl02b24nt",
   account_id: "a814a8r2-a664-4rcb-759c-9de21744117a",
-  user_agent: "MY-AGENT/1.0"    
+  user_agent: "MY-AGENT/1.0"
 )
 
 execution_id = client.runs.execute(run_id)
@@ -84,7 +84,7 @@ Ensure all environment variables are set before recording new VCR cassettes.
 
     # Includes Rubocop
     $ bin/rspec
-    
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
