@@ -1,7 +1,7 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'cloud_scrape/version'
+require "cloud_scrape/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "cloud_scrape"
@@ -9,12 +9,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Charles J Hardy"]
   spec.email         = ["chuckjhardy@gmail.com"]
 
-  spec.summary       = %q{Wrapper for CloudScrape API}
-  spec.description   = %q{Wrapper for CloudScrape API}
+  spec.summary       = "Wrapper for CloudScrape API"
+  spec.description   = "Wrapper for CloudScrape API"
   spec.homepage      = "https://github.com/cloudscrape/cloudscrape-client-ruby"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features)/})
+  end
+
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
@@ -22,4 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "simplecov"
 end

@@ -1,6 +1,6 @@
 # CloudScrape Ruby Client
 
-Wrapper for CloudScrape API. 
+Wrapper for CloudScrape API.
 
 * [API Documentation](https://app.cloudscrape.com/#/api)
 * [Support](https://cloudscrape.zendesk.com/hc/en-us)
@@ -18,7 +18,7 @@ And then execute:
 Or install it yourself as:
 
     $ gem install cloud_scrape
-    
+
 ## Configuration
 
 ``` ruby
@@ -33,17 +33,17 @@ CloudScrape.configure do |config|
   config.logger = Rails.logger
 end
 ```
-    
+
 Some confirmation can be set by environment variables:
 
 ``` bash
-CLOUND_SCRAPE_CLIENT_BASE_URL="https://app.cloudscrape.com/api/"
-CLOUND_SCRAPE_CLIENT_API_KEY="pol6BFzsASYw4gQBl02b24nt"
-CLOUND_SCRAPE_CLIENT_ACCOUNT_ID="a814a8r2-a664-4rcb-759c-9de21744117a"
-CLOUND_SCRAPE_CLIENT_USER_AGENT="MY-AGENT/1.0"
-CLOUND_SCRAPE_CLIENT_TIMEOUT=60000
-CLOUND_SCRAPE_CLIENT_VERBOSE=true
-CLOUND_SCRAPE_CLIENT_LOG=true
+CLOUD_SCRAPE_CLIENT_BASE_URL="https://app.cloudscrape.com/api/"
+CLOUD_SCRAPE_CLIENT_API_KEY="pol6BFzsASYw4gQBl02b24nt"
+CLOUD_SCRAPE_CLIENT_ACCOUNT_ID="a814a8r2-a664-4rcb-759c-9de21744117a"
+CLOUD_SCRAPE_CLIENT_USER_AGENT="MY-AGENT/1.0"
+CLOUD_SCRAPE_CLIENT_TIMEOUT=60000
+CLOUD_SCRAPE_CLIENT_VERBOSE=true
+CLOUD_SCRAPE_CLIENT_LOG=true
 ```
 
 * `base_url` sets the CloudScrape API url `https://app.cloudscrape.com/api/`
@@ -61,7 +61,7 @@ CLOUND_SCRAPE_CLIENT_LOG=true
 client = CloudScrape.new(
   api_key: "pol6BFzsASYw4gQBl02b24nt",
   account_id: "a814a8r2-a664-4rcb-759c-9de21744117a",
-  user_agent: "MY-AGENT/1.0"    
+  user_agent: "MY-AGENT/1.0"
 )
 
 execution_id = client.runs.execute(run_id)
@@ -84,7 +84,7 @@ Ensure all environment variables are set before recording new VCR cassettes.
 
     # Includes Rubocop
     $ bin/rspec
-    
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.

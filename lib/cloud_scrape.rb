@@ -1,5 +1,8 @@
-require "cloud_scrape/version"
+require "logger"
 
-module CloudScrape
-  # Your code goes here...
+require "cloud_scrape/version"
+require "cloud_scrape/configuration"
+
+class CloudScrape
+  extend Configure
 end
