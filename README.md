@@ -83,7 +83,7 @@ client.executions.remove(execution_id)
 Ensure all environment variables are set before recording new VCR cassettes.
 
     # Includes Rubocop
-    $ bin/rspec
+    $ bin/test
 
 ## Development
 
