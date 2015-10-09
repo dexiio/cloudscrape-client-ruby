@@ -14,4 +14,14 @@ describe CloudScrape::Executions do
       end
     end
   end
+
+  describe "#remove" do
+    subject(:remove) { instance.remove }
+
+    it "calls off to ExecutionDTO and returns" do
+      VCR.use_cassette("valid/executions/remove") do
+        expect(remove).to eq("")
+      end
+    end
+  end
 end
