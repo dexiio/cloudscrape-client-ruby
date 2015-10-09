@@ -12,4 +12,14 @@ describe CloudScrape do
       expect(runs).to be_an_instance_of(CloudScrape::Runs)
     end
   end
+
+  describe ".executions" do
+    subject(:executions) { instance.executions(id) }
+
+    let(:id) { "123" }
+
+    it "returns run object" do
+      expect(executions).to be_an_instance_of(CloudScrape::Executions)
+    end
+  end
 end

@@ -12,7 +12,7 @@ describe CloudScrape::RunDTO do
       domain: "https://app.cloudscrape.com/api/",
       url: "runs/#{id}/#{url}",
       options: {
-        api_key: "MY_API_KEY",
+        api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
         format: "json"
       }
     ) { response }
