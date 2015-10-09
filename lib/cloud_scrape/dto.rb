@@ -8,6 +8,10 @@ class CloudScrape
       @options = options
     end
 
+    def self.for(options)
+      new(options: options).response(options.fetch(:method))
+    end
+
     def self.get(options = {})
       new(options: options).response(:get)
     end
