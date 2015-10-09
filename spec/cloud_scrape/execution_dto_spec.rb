@@ -1,16 +1,16 @@
 require "spec_helper"
 
-describe CloudScrape::RunDTO do
+describe CloudScrape::ExecutionDTO do
   subject(:run) { described_class.for(method: :get, id: id, url: url) }
 
-  let(:id) { "tE2e9y7J-eyFiOAKaivrxsMl" }
-  let(:url) { "execute" }
+  let(:id) { "813d13cd-bd5e-4f65-bd60-45eee6251865" }
+  let(:url) { "result" }
   let(:response) { double("Faraday::Response", body: {}) }
 
   it "calls API with expected arguments" do
     expect(CloudScrape::API).to receive(:get).with(
       domain: "https://app.cloudscrape.com/api/",
-      url: "runs/#{id}/#{url}",
+      url: "executions/#{id}/#{url}",
       options: {
         api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
         format: "json"
