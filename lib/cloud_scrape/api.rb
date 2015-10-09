@@ -1,3 +1,4 @@
+require "digest"
 require "faraday"
 require "faraday_middleware"
 require "faraday_middleware/multi_json"
@@ -33,18 +34,32 @@ class CloudScrape
 
     private
 
-    def verbose?
-      CloudScrape.configuration.verbose
+    def access_key
+      Digest::MD5.hexdigest(account_id + CloudScrape.configuration.api_key)
     end
 
-    def logger
-      CloudScrape.configuration.logger
+    def account_id
+      CloudScrape.configuration.account_id
     end
 
     def connection(domain)
       Faraday.new(url: domain) do |faraday|
         faraday.request :url_encoded
-        faraday.response :logger, logger if verbose?
+
+        faraday.request :user_agent,
+          app: CloudScrape.configuration.user_agent_app,
+          version: CloudScrape.configuration.user_agent_version
+
+        faraday.request :request_headers,
+          accept: "application/json",
+          x_cloud_scrape_access: access_key,
+          x_cloud_scrape_account: account_id,
+          content_type: "application/json"
+
+        if CloudScrape.configuration.verbose
+          faraday.response :logger, CloudScrape.configuration.logger
+        end
+
         faraday.response :multi_json,
                          content_type: /\bjson$/,
                          symbolize_keys: true
