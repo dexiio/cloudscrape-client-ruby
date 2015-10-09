@@ -21,15 +21,32 @@ class CloudScrape
                     :log,
                     :logger
 
-      def initialize
-        self.base_url = "https://app.cloudscrape.com/api/"
-        self.api_key = nil
-        self.account_id = nil
-        self.user_agent = "CS-RUBY-CLIENT/1.0"
-        self.timeout = 3600
-        self.verbose = false
-        self.log = false
+      def initialize # rubocop:disable Metrics/AbcSize
+        self.base_url = base_url_default
+        self.user_agent = user_agent_default
+        self.timeout = timeout_default
+
+        self.api_key = ENV["CLOUD_SCRAPE_CLIENT_API_KEY"]
+        self.account_id = ENV["CLOUD_SCRAPE_CLIENT_ACCOUNT_ID"]
+        self.verbose = ENV["CLOUD_SCRAPE_CLIENT_VERBOSE"] || false
+        self.log = ENV["CLOUD_SCRAPE_CLIENT_LOG"] || false
+
         self.logger = Logger.new(STDOUT)
+      end
+
+      private
+
+      def base_url_default
+        ENV["CLOUD_SCRAPE_CLIENT_BASE_URL"] ||
+          "https://app.cloudscrape.com/api/"
+      end
+
+      def user_agent_default
+        ENV["CLOUD_SCRAPE_CLIENT_USER_AGENT"] || "CS-RUBY-CLIENT/1.0"
+      end
+
+      def timeout_default
+        ENV["CLOUD_SCRAPE_CLIENT_TIMEOUT"] || 3600
       end
     end
   end
