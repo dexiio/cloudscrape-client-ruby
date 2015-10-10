@@ -40,7 +40,7 @@ RSpec.describe CloudScrape::API do
       expect(connection).to receive(:post).and_yield(request)
 
       expect(request).to receive(:url).with("/endpoint/Some%20Bad%20URL")
-      expect(request).to receive(:body=).with("key=value")
+      expect(request).to receive(:body=).with("{\"key\":\"value\"}")
 
       post
     end

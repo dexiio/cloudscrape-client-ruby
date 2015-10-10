@@ -13,5 +13,9 @@ class CloudScrape
     def url
       options.fetch(:url)
     end
+
+    def params
+      options.fetch(:input)
+    end
   end
 end
