@@ -4,6 +4,8 @@ RSpec.describe CloudScrape::DTO do
   let(:instance) { described_class.new(options: options) }
   let(:options) { { something: :else } }
 
+  let(:response) { double('Faraday::Response', status: 200, body: {}) }
+
   describe ".get" do
     subject { described_class.get(options) }
 
@@ -23,7 +25,7 @@ RSpec.describe CloudScrape::DTO do
           api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
           format: "json"
         }
-      ) { double(body: {}) }
+      ) { response }
 
       expect(subject).to eq({})
     end
@@ -48,7 +50,7 @@ RSpec.describe CloudScrape::DTO do
           api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
           format: "json"
         }
-      ) { double(body: {}) }
+      ) { response }
 
       expect(subject).to eq({})
     end
@@ -73,7 +75,7 @@ RSpec.describe CloudScrape::DTO do
           api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
           format: "json"
         }
-      ) { double(body: {}) }
+      ) { response }
 
       expect(subject).to eq({})
     end

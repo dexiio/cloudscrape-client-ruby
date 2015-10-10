@@ -1,4 +1,5 @@
 require "cloud_scrape/api"
+require "cloud_scrape/validate"
 
 class CloudScrape
   class DTO
@@ -33,7 +34,7 @@ class CloudScrape
           api_key: api_key,
           format: "json"
         }.merge(params)
-      ).body
+      ).tap(&CloudScrape::Validate).body
     end
 
     def params
