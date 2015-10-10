@@ -8,27 +8,29 @@ class CloudScrape
     end
 
     def get
-      Get.new(response: ExecutionDTO.for(id: id, url: "", method: :get))
+      Get.new(response: dto("", :get))
     end
 
     def result
-      ExecutionDTO.for(id: id, url: "result", method: :get)
+      dto("result", :get)
     end
 
     def remove
-      ExecutionDTO.for(id: id, url: "", method: :delete)
+      dto("", :delete)
     end
 
     def stop
-      ExecutionDTO.for(id: id, url: "stop", method: :post)
+      dto("stop", :post)
     end
 
     def continue
-      ExecutionDTO.for(id: id, url: "continue", method: :post)
+      dto("continue", :post)
     end
 
     private
 
-    attr_reader :id
+    def dto(url, method)
+      ExecutionDTO.for(id: @id, url: url, method: method)
+    end
   end
 end
