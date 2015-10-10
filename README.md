@@ -34,7 +34,7 @@ CloudScrape.configure do |config|
 end
 ```
 
-Some confirmation can be set by environment variables:
+Some configuration can be set by environment variables:
 
 ``` bash
 CLOUD_SCRAPE_CLIENT_BASE_URL="https://app.cloudscrape.com/api/"
@@ -109,7 +109,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/ParseHub/fork )
+1. Fork it ( https://github.com/cloudscrape/cloudscrape-client-ruby/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
