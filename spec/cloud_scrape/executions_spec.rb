@@ -34,4 +34,14 @@ describe CloudScrape::Executions do
       end
     end
   end
+
+  describe "#stop" do
+    subject(:stop) { instance.stop }
+
+    it "calls off to ExecutionDTO and returns" do
+      VCR.use_cassette("valid/executions/stop") do
+        expect(stop).to be_a(Hash)
+      end
+    end
+  end
 end
