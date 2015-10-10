@@ -25,8 +25,8 @@ class CloudScrape
     def post(domain:, url:, options: {})
       connection(domain).post do |req|
         req.url URI.escape(url)
-        req.body = URI.encode_www_form(options)
         req.headers["Content-Type"] = "application/json"
+        req.body = options.to_json
       end
     end
 
