@@ -80,7 +80,7 @@ execution_id = client.runs(run_id).execute(url: 'http://google.com')
 #### Executions (Get) [Docs](https://app.cloudscrape.com/#/api/sections/executions/get)
 
 ``` ruby
-execution = client.executions.get(execution_id)
+execution = client.executions(execution_id).get
 execution.queued? # => false
 execution.pending? # => true
 execution.running? # => false
@@ -92,7 +92,7 @@ execution.ok? # => false
 #### Executions (Remove) [Docs](https://app.cloudscrape.com/#/api/sections/executions/remove)
 
 ``` ruby
-client.executions.remove(execution_id)
+client.executions(execution_id).remove
 ```
 
 #### Executions (Get Result) [Docs](https://app.cloudscrape.com/#/api/sections/executions/getResult)
@@ -100,7 +100,7 @@ client.executions.remove(execution_id)
 Methods are dynamically defined based on headers.
 
 ``` ruby
-execution = client.executions.result(execution_id)
+execution = client.executions(execution_id).result
 execution.response # => { headers: [...], rows: [...] }
 execution.as_hash # => { ... }
 ```
@@ -108,13 +108,13 @@ execution.as_hash # => { ... }
 #### Executions (Stop) [Docs](https://app.cloudscrape.com/#/api/sections/executions/stop)
 
 ``` ruby
-client.executions.stop(execution_id)
+client.executions(execution_id).stop
 ```
 
 #### Executions (Continue) [Docs](https://app.cloudscrape.com/#/api/sections/executions/continue)
 
 ``` ruby
-client.executions.continue(execution_id)
+client.executions(execution_id).continue
 ```
 
 ## Postman File
