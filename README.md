@@ -54,19 +54,32 @@ CLOUD_SCRAPE_CLIENT_VERBOSE=true
 * `verbose` should all output be printed to STDOUT `false`
 * `logger` Logger object. `Logger`
 
-## Basic Usage
+## Usage
 
 ``` ruby
-# Execute execution for a run (optional arguments to override configuration)
+# Create client (optional arguments to override configuration)
 client = CloudScrape.new(
   api_key: "pol6BFzsASYw4gQBl02b24nt",
   account_id: "a814a8r2-a664-4rcb-759c-9de21744117a",
   user_agent: "MY-AGENT/1.0"
 )
+```
 
-execution_id = client.runs.execute(run_id)
+#### Runs (Execute) [Docs](https://app.cloudscrape.com/#/api/sections/runs/execute)
 
-# Check execution state
+``` ruby
+execution_id = client.runs(run_id).execute
+```
+
+#### Runs (Execute with Input) [Docs](https://app.cloudscrape.com/#/api/sections/runs/executeWithInput)
+
+``` ruby
+execution_id = client.runs(run_id).execute(url: 'http://google.com')
+```
+
+#### Executions (Get) [Docs](https://app.cloudscrape.com/#/api/sections/executions/get)
+
+``` ruby
 execution = client.executions.get(execution_id)
 execution.queued? # => false
 execution.pending? # => true
@@ -74,19 +87,33 @@ execution.running? # => false
 execution.failed? # => false
 execution.stopped? # => false
 execution.ok? # => false
+```
 
-# Execution results (Methods are dynamically defined based on headers)
+#### Executions (Remove) [Docs](https://app.cloudscrape.com/#/api/sections/executions/remove)
+
+``` ruby
+client.executions.remove(execution_id)
+```
+
+#### Executions (Get Result) [Docs](https://app.cloudscrape.com/#/api/sections/executions/getResult)
+
+Methods are dynamically defined based on headers.
+
+``` ruby
 execution = client.executions.result(execution_id)
 execution.response # => { headers: [...], rows: [...] }
 execution.as_hash # => { ... }
+```
 
-# Remove execution
-client.executions.remove(execution_id)
+#### Executions (Stop) [Docs](https://app.cloudscrape.com/#/api/sections/executions/stop)
 
-# Stop execution
+``` ruby
 client.executions.stop(execution_id)
+```
 
-# Continue execution
+#### Executions (Continue) [Docs](https://app.cloudscrape.com/#/api/sections/executions/continue)
+
+``` ruby
 client.executions.continue(execution_id)
 ```
 
