@@ -5,7 +5,7 @@ describe CloudScrape::ExecutionDTO do
 
   let(:id) { "813d13cd-bd5e-4f65-bd60-45eee6251865" }
   let(:url) { "result" }
-  let(:response) { double("Faraday::Response", body: {}) }
+  let(:response) { double("Faraday::Response", status: 200, body: {}) }
 
   it "calls API with expected arguments" do
     expect(CloudScrape::API).to receive(:get).with(

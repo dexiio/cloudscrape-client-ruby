@@ -9,6 +9,9 @@ require "cloud_scrape/executions"
 class CloudScrape
   extend Configure
 
+  NotFound = Class.new(StandardError)
+  InternalServerError = Class.new(StandardError)
+
   def runs(id)
     Runs.new(id: id)
   end
