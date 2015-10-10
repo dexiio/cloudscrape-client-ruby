@@ -60,8 +60,7 @@ CLOUD_SCRAPE_CLIENT_VERBOSE=true
 # Create client (optional arguments to override configuration)
 client = CloudScrape.new(
   api_key: "pol6BFzsASYw4gQBl02b24nt",
-  account_id: "a814a8r2-a664-4rcb-759c-9de21744117a",
-  user_agent: "MY-AGENT/1.0"
+  account_id: "a814a8r2-a664-4rcb-759c-9de21744117a"
 )
 ```
 

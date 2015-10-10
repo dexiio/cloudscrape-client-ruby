@@ -12,6 +12,11 @@ class CloudScrape
   NotFound = Class.new(StandardError)
   InternalServerError = Class.new(StandardError)
 
+  def initialize(api_key: nil, account_id: nil)
+    CloudScrape.configuration.api_key = api_key if api_key
+    CloudScrape.configuration.account_id = account_id if account_id
+  end
+
   def runs(id)
     Runs.new(id: id)
   end
