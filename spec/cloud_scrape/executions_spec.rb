@@ -20,7 +20,7 @@ describe CloudScrape::Executions do
 
     it "calls off to ExecutionDTO and returns" do
       VCR.use_cassette("valid/executions/result") do
-        expect(result.keys.size).to be > 0
+        expect(result).to be_an_instance_of(CloudScrape::Executions::Result)
       end
     end
   end

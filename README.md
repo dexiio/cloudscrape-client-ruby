@@ -70,15 +70,27 @@ client = CloudScrape.new(
 execution_id = client.runs.execute(run_id)
 
 # Check execution state
-client.executions.get(execution_id).running?
-# => true
+execution = client.executions.get(execution_id)
+execution.queued? # => false
+execution.pending? # => true
+execution.running? # => false
+execution.failed? # => false
+execution.stopped? # => false
+execution.ok? # => false
 
-# Execution results
-client.executions.result(execution_id)
-# => { ... }
+# Execution results (Methods are dynamically defined based on headers)
+execution = client.executions.result(execution_id)
+execution.response # => { headers: [...], rows: [...] }
+execution.as_hash # => { ... }
 
 # Remove execution
 client.executions.remove(execution_id)
+
+# Stop execution
+client.executions.stop(execution_id)
+
+# Continue execution
+client.executions.continue(execution_id)
 ```
 
 ## Postman File

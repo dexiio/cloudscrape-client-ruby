@@ -1,5 +1,6 @@
 require "cloud_scrape/execution_dto"
 require "cloud_scrape/executions/get"
+require "cloud_scrape/executions/result"
 
 class CloudScrape
   class Executions
@@ -12,7 +13,7 @@ class CloudScrape
     end
 
     def result
-      dto("result", :get)
+      Result.new(response: dto("result", :get))
     end
 
     def remove
