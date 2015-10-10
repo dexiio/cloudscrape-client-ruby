@@ -10,7 +10,7 @@ describe CloudScrape::Runs do
 
     it "calls off to RunDTO and returns" do
       VCR.use_cassette("valid/runs/execute") do
-        expect(execute).to eq("5438f8a3-524e-429b-9791-de114f290931")
+        expect(execute).to eq("3a8ea1f2-6781-4371-841f-66f6210a27b9")
       end
     end
   end

@@ -3,7 +3,7 @@ require "vcr_helper"
 describe CloudScrape::Executions do
   let(:instance) { described_class.new(id: id) }
 
-  let(:id) { "5438f8a3-524e-429b-9791-de114f290931" }
+  let(:id) { "3a8ea1f2-6781-4371-841f-66f6210a27b9" }
 
   describe "#get" do
     subject(:get) { instance.get }
@@ -41,6 +41,16 @@ describe CloudScrape::Executions do
     it "calls off to ExecutionDTO and returns" do
       VCR.use_cassette("valid/executions/stop") do
         expect(stop).to be_a(Hash)
+      end
+    end
+  end
+
+  describe "#continue" do
+    subject(:continue) { instance.continue }
+
+    it "calls off to ExecutionDTO and returns" do
+      VCR.use_cassette("valid/executions/continue") do
+        expect(continue).to be_a(Hash)
       end
     end
   end

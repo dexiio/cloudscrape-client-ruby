@@ -23,6 +23,10 @@ class CloudScrape
       ExecutionDTO.for(id: id, url: "stop", method: :post)
     end
 
+    def continue
+      ExecutionDTO.for(id: id, url: "continue", method: :post)
+    end
+
     private
 
     attr_reader :id

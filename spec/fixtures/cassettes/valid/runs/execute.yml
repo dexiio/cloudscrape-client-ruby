@@ -8,7 +8,7 @@ http_interactions:
       string: api_key=<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>&format=json
     headers:
       User-Agent:
-      - CS-RUBY-CLIENT/1.0 (ChuckJHardy; Chuck; 57030) ruby/2.2.3 (173; x86_64-darwin14)
+      - CS-RUBY-CLIENT/1.0 (ChuckJHardy; Chuck; 58198) ruby/2.2.3 (173; x86_64-darwin14)
       Content-Type:
       - application/json
       Accept:
@@ -27,19 +27,19 @@ http_interactions:
       X-Powered-By:
       - Express
       Date:
-      - Fri, 09 Oct 2015 23:59:14 GMT
+      - Sat, 10 Oct 2015 00:18:31 GMT
       Content-Type:
       - application/json
       Vary:
       - Accept-Encoding, User-Agent
       Set-Cookie:
-      - cssesid=s%3A48s9h1DIBIlZFmM0IZuPF4CzWTZQoVym.XJ4x1EngWNcRaKbt6N8jOR%2FZXdLg4DTWSVnqiwr8QME;
+      - cssesid=s%3Azco2pPNeEM0MjIK5eVfOmOU-ehHerbRy.mAHMqq%2FXKgXXl1%2Fd8Z3X5HhQB3DuylSpKBw7VkJpdmw;
         Path=/
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"_id":"5438f8a3-524e-429b-9791-de114f290931","state":"QUEUED","starts":1444435154373,"finished":null}'
+      string: '{"_id":"3a8ea1f2-6781-4371-841f-66f6210a27b9","state":"QUEUED","starts":1444436311837,"finished":null}'
     http_version: 
-  recorded_at: Fri, 09 Oct 2015 23:59:13 GMT
+  recorded_at: Sat, 10 Oct 2015 00:18:31 GMT
 recorded_with: VCR 2.9.3
