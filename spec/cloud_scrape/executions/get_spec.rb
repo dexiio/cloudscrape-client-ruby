@@ -7,7 +7,7 @@ describe CloudScrape::Executions::Get do
     {
       _id: "c535dfdc-b84f-11e4-b6cc-001f5b3cb724",
       state: state,
-      starts: 1424361401458,
+      starts: 142_436_140_145_8,
       finished: nil
     }
   end
