@@ -17,7 +17,7 @@ describe CloudScrape::RunDTO do
       options: {
         api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
         format: "json",
-        url: input[:url],
+        url: input[:url]
       }
     ) { response }
 

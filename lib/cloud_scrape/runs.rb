@@ -6,7 +6,7 @@ class CloudScrape
       @id = id
     end
 
-    def execute(input={})
+    def execute(input = {})
       url = input.empty? ? "execute" : "execute/inputs"
       dto(url, :post, input).fetch(:_id)
     end

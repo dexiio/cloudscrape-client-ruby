@@ -4,7 +4,7 @@ RSpec.describe CloudScrape::DTO do
   let(:instance) { described_class.new(options: options) }
   let(:options) { { something: :else } }
 
-  let(:response) { double('Faraday::Response', status: 200, body: {}) }
+  let(:response) { double("Faraday::Response", status: 200, body: {}) }
 
   describe ".get" do
     subject { described_class.get(options) }
