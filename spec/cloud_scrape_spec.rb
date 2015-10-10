@@ -8,8 +8,8 @@ describe CloudScrape do
       described_class.new(api_key: api_key, account_id: account_id)
     end
 
-    let(:api_key) { 'new_api_key' }
-    let(:account_id) { 'new_accout_id' }
+    let(:api_key) { "new_api_key" }
+    let(:account_id) { "new_accout_id" }
 
     it "sets configuration api key" do
       new
