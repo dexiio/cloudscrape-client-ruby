@@ -6,7 +6,9 @@ describe CloudScrape::Executions::Result do
   let(:response) do
     {
       headers: %w(name age location),
-      rows: %w(Chuck 31 Manchester)
+      rows: [
+        %w(Chuck 31 Manchester)
+      ]
     }
   end
 

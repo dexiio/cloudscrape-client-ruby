@@ -23,7 +23,7 @@ class CloudScrape
       end
 
       def rows
-        response.fetch(:rows, [])
+        response.fetch(:rows, [[]]).flatten
       end
 
       def define_method_for_header
