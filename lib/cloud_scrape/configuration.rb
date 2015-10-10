@@ -19,7 +19,6 @@ class CloudScrape
                     :user_agent_version,
                     :timeout,
                     :verbose,
-                    :log,
                     :logger
 
       def initialize # rubocop:disable Metrics/AbcSize
@@ -31,7 +30,6 @@ class CloudScrape
         self.api_key = ENV["CLOUD_SCRAPE_CLIENT_API_KEY"]
         self.account_id = ENV["CLOUD_SCRAPE_CLIENT_ACCOUNT_ID"]
         self.verbose = ENV["CLOUD_SCRAPE_CLIENT_VERBOSE"] || false
-        self.log = ENV["CLOUD_SCRAPE_CLIENT_LOG"] || false
 
         self.logger = Logger.new(STDOUT)
       end

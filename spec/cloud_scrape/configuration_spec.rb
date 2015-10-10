@@ -161,24 +161,6 @@ RSpec.describe CloudScrape::Configure do
     end
   end
 
-  describe "#log" do
-    subject { instance.configuration.log }
-
-    it "returns default" do
-      expect(subject).to eq(false)
-    end
-
-    it "returns altered" do
-      instance.configure { |config| config.log = true }
-      expect(subject).to eq(true)
-    end
-
-    it "returns from ENV Var" do
-      stub_const("ENV", "CLOUD_SCRAPE_CLIENT_LOG" => true)
-      expect(subject).to eq(true)
-    end
-  end
-
   describe "#logger" do
     subject { instance.configuration.logger }
 

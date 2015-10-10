@@ -30,7 +30,6 @@ CloudScrape.configure do |config|
   config.user_agent_version = "1.0"
   config.timeout = 60000
   config.verbose = true
-  config.log = true
   config.logger = Rails.logger
 end
 ```
@@ -45,7 +44,6 @@ CLOUD_SCRAPE_CLIENT_USER_AGENT_APP="MY-AGENT"
 CLOUD_SCRAPE_CLIENT_USER_AGENT_VERSION="1.0"
 CLOUD_SCRAPE_CLIENT_TIMEOUT=60000
 CLOUD_SCRAPE_CLIENT_VERBOSE=true
-CLOUD_SCRAPE_CLIENT_LOG=true
 ```
 
 * `base_url` sets the CloudScrape API url `https://app.cloudscrape.com/api/`
@@ -54,7 +52,6 @@ CLOUD_SCRAPE_CLIENT_LOG=true
 * `user_agent_version` sets the UserAgent version sent to CloudScrape `1.0`
 * `timeout` sets the CloudScrape API request timeout `3600`
 * `verbose` should all output be printed to STDOUT `false`
-* `log` should log message be printed `false`
 * `logger` Logger object. `Logger`
 
 ## Basic Usage
