@@ -1,7 +1,7 @@
 class CloudScrape
   class RunDTO < DTO
     def endpoint
-      "runs/#{id}/#{url}"
+      "runs/#{id}/#{url}?connect=#{connect}"
     end
 
     private
@@ -12,6 +12,10 @@ class CloudScrape
 
     def url
       options.fetch(:url)
+    end
+
+    def connect
+      options.fetch(:connect)
     end
 
     def params

@@ -10,18 +10,18 @@ describe CloudScrape::Runs do
 
     it "calls off to RunDTO and returns" do
       VCR.use_cassette("valid/runs/execute") do
-        expect(execute).to eq("3a8ea1f2-6781-4371-841f-66f6210a27b9")
+        expect(execute).to eq("52f49f63-51e7-4ce3-90b4-6294814f8b34")
       end
     end
 
     context "when input" do
-      subject(:execute) { instance.execute(input) }
+      subject(:execute) { instance.execute(input: input, connect: true) }
 
       let(:input) { { url: "http://www.google.com" } }
 
       it "calls off to RunDTO and returns" do
         VCR.use_cassette("valid/runs/execute_with_input") do
-          expect(execute).to eq("283002e2-9117-4dd6-a830-5bdecd8889a6")
+          expect(execute).to eq("ea5da785-bcee-4a63-b714-b29eb9a3d852")
         end
       end
     end
