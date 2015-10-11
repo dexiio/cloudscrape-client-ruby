@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.cloudscrape.com/api/executions/3a8ea1f2-6781-4371-841f-66f6210a27b9/stop
+    body:
+      encoding: US-ASCII
+      string: api_key=<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>&format=json
+    headers:
+      User-Agent:
+      - CS-RUBY-CLIENT/1.0 (ChuckJHardy; Chuck; 58246) ruby/2.2.3 (173; x86_64-darwin14)
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      X-Cloudscrape-Access:
+      - d7818ef991012e3c94e8ea3cda149936
+      X-Cloudscrape-Account:
+      - "<CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      X-Powered-By:
+      - Express
+      Date:
+      - Sat, 10 Oct 2015 00:19:03 GMT
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - cssesid=s%3AX1TJUfV1kC-aXsG1CEP7_AKO2DHAMZ2F.7nQi5ZBpT7Y6isQLp%2F4acGyD8nn2HjrWy3i8UIyQcCY;
+        Path=/
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":true,"code":400}'
+    http_version: 
+  recorded_at: Sat, 10 Oct 2015 00:19:02 GMT
+recorded_with: VCR 2.9.3

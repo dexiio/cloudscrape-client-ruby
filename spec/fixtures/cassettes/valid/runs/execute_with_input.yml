@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.cloudscrape.com/api/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute/inputs
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>","format":"json","url":"http://www.google.com"}'
+    headers:
+      User-Agent:
+      - CS-RUBY-CLIENT/1.0 (Charless-Air; Chuck; 29931) ruby/2.2.1 (85; x86_64-darwin15)
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      X-Cloudscrape-Access:
+      - d7818ef991012e3c94e8ea3cda149936
+      X-Cloudscrape-Account:
+      - "<CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      Date:
+      - Sat, 10 Oct 2015 17:57:21 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding, User-Agent
+      Set-Cookie:
+      - cssesid=s%3A3yuFW9iN7fNxwBdNP89ualYRD4Sg3cLb.dycFi76aQvNhQzePPXZgL7qjzhabRyZgtwTSxrMI%2FIQ;
+        Path=/
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_id":"283002e2-9117-4dd6-a830-5bdecd8889a6","state":"PENDING","starts":1444499841436,"finished":null}'
+    http_version: 
+  recorded_at: Sat, 10 Oct 2015 17:57:22 GMT
+recorded_with: VCR 2.9.3

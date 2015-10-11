@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://app.cloudscrape.com/api/executions/3a8ea1f2-6781-4371-841f-66f6210a27b9/?api_key=<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>&format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - CS-RUBY-CLIENT/1.0 (ChuckJHardy; Chuck; 58553) ruby/2.2.3 (173; x86_64-darwin14)
+      Accept:
+      - application/json
+      X-Cloudscrape-Access:
+      - d7818ef991012e3c94e8ea3cda149936
+      X-Cloudscrape-Account:
+      - "<CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      Date:
+      - Sat, 10 Oct 2015 00:26:53 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding, User-Agent
+      Set-Cookie:
+      - cssesid=s%3AwKn8aoH32A39eoA0FN1Rxhs1IU8N8HzR.PoaNkkc6zyXbO3RWPoYVYqrAzv3OAGpCC6%2FPSKdIqv0;
+        Path=/
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Sat, 10 Oct 2015 00:26:53 GMT
+recorded_with: VCR 2.9.3
