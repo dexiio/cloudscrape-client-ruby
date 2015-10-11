@@ -117,7 +117,7 @@
 		{
 			"id": "d3ecd8c7-c9cf-8c95-5d8b-5a671bfe9403",
 			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://app.cloudscrape.com/api/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute/inputs",
+			"url": "https://app.cloudscrape.com/api/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute/inputs?connect=true",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "POST",
@@ -127,7 +127,7 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1444497574353,
+			"time": 1444566409009,
 			"name": "Execute with Input",
 			"description": "Starts new execution of run using the input from the body instead of the run itself.\n\nhttps://app.cloudscrape.com/#/api/sections/runs/executeWithInput",
 			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
