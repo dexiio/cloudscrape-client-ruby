@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app.cloudscrape.com/api/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute
+    uri: https://app.cloudscrape.com/api/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute?connect=false
     body:
-      encoding: US-ASCII
-      string: api_key=<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>&format=json
+      encoding: UTF-8
+      string: '{"api_key":"<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>","format":"json"}'
     headers:
       User-Agent:
-      - CS-RUBY-CLIENT/1.0 (ChuckJHardy; Chuck; 58198) ruby/2.2.3 (173; x86_64-darwin14)
+      - CS-RUBY-CLIENT/1.0 (UNKNOWN; Chuck; 52089) ruby/2.2.1 (85; x86_64-darwin15)
       Content-Type:
       - application/json
       Accept:
@@ -27,19 +27,19 @@ http_interactions:
       X-Powered-By:
       - Express
       Date:
-      - Sat, 10 Oct 2015 00:18:31 GMT
+      - Sun, 11 Oct 2015 12:35:15 GMT
       Content-Type:
       - application/json
       Vary:
       - Accept-Encoding, User-Agent
       Set-Cookie:
-      - cssesid=s%3Azco2pPNeEM0MjIK5eVfOmOU-ehHerbRy.mAHMqq%2FXKgXXl1%2Fd8Z3X5HhQB3DuylSpKBw7VkJpdmw;
+      - cssesid=s%3ARufp9VKmDghjKdaMor3kBzZiIk8m5ZvY.KASh0W4c9sA6CYvp%2FBeKsL4uK2rN%2BRE622JXbtx4HyU;
         Path=/
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"_id":"3a8ea1f2-6781-4371-841f-66f6210a27b9","state":"QUEUED","starts":1444436311837,"finished":null}'
+      string: '{"_id":"52f49f63-51e7-4ce3-90b4-6294814f8b34","state":"QUEUED","starts":1444566915065,"finished":null}'
     http_version: 
-  recorded_at: Sat, 10 Oct 2015 00:18:31 GMT
+  recorded_at: Sun, 11 Oct 2015 12:35:15 GMT
 recorded_with: VCR 2.9.3
