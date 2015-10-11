@@ -15,7 +15,7 @@ describe CloudScrape::Runs do
     end
 
     context "when input" do
-      subject(:execute) { instance.execute(input, connect: true) }
+      subject(:execute) { instance.execute(input: input, connect: true) }
 
       let(:input) { { url: "http://www.google.com" } }
 

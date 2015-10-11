@@ -79,7 +79,7 @@ execution_id = client.runs(run_id).execute
 When `connect: true` is passed execution will upload it's result to configured integrations for this run.
 
 ``` ruby
-execution_id = client.runs(run_id).execute(url: 'http://google.com', connect: true)
+execution_id = client.runs(run_id).execute(input: { url: 'http://google.com' }, connect: true)
 ```
 
 #### Executions (Get) [Docs](https://app.cloudscrape.com/#/api/sections/executions/get)

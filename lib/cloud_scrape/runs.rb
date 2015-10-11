@@ -6,7 +6,7 @@ class CloudScrape
       @id = id
     end
 
-    def execute(input = {}, connect: false)
+    def execute(input: {}, connect: false)
       RunDTO.for(
         id: @id,
         url: (input.empty? ? "execute" : "execute/inputs"),
