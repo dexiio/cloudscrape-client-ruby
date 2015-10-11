@@ -6,15 +6,14 @@ class CloudScrape
       @id = id
     end
 
-    def execute(input = {})
-      url = input.empty? ? "execute" : "execute/inputs"
-      dto(url, :post, input).fetch(:_id)
-    end
-
-    private
-
-    def dto(url, method, input)
-      RunDTO.for(id: @id, url: url, input: input, method: method)
+    def execute(input = {}, connect: false)
+      RunDTO.for(
+        id: @id,
+        url: (input.empty? ? "execute" : "execute/inputs"),
+        input: input,
+        connect: connect,
+        method: :post
+      ).fetch(:_id)
     end
   end
 end
