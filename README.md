@@ -5,6 +5,10 @@ Wrapper for CloudScrape API.
 * [API Documentation](https://app.cloudscrape.com/#/api)
 * [Support](https://cloudscrape.zendesk.com/hc/en-us)
 
+## Requirements
+
+* Ruby `> 1.9.x`
+
 ## Installation
 
 Add this line to your application's Gemfile:

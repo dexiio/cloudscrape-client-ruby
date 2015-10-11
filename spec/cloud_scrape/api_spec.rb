@@ -20,6 +20,24 @@ RSpec.describe CloudScrape::API do
 
       get
     end
+
+    context "invalid account id" do
+      it "raises error" do
+        expect(CloudScrape.configuration)
+          .to receive(:account_id).twice { nil }
+
+        expect { get }.to raise_error(CloudScrape::API::InvalidAccountId, nil)
+      end
+    end
+
+    context "invalid api key" do
+      it "raises error" do
+        expect(CloudScrape.configuration)
+          .to receive(:api_key).twice { nil }
+
+        expect { get }.to raise_error(CloudScrape::API::InvalidApiKey, nil)
+      end
+    end
   end
 
   describe ".post" do

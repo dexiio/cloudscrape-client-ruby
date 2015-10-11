@@ -6,6 +6,9 @@ require "faraday_middleware/multi_json"
 
 class CloudScrape
   class API
+    InvalidApiKey = Class.new(StandardError)
+    InvalidAccountId = Class.new(StandardError)
+
     def self.get(*args)
       new.get(*args)
     end
@@ -37,11 +40,18 @@ class CloudScrape
     private
 
     def access_key
-      Digest::MD5.hexdigest(account_id + CloudScrape.configuration.api_key)
+      fail InvalidAccountId, account_id unless account_id
+      fail InvalidApiKey, api_key unless api_key
+
+      Digest::MD5.hexdigest(account_id + api_key)
     end
 
     def account_id
       CloudScrape.configuration.account_id
+    end
+
+    def api_key
+      CloudScrape.configuration.api_key
     end
 
     # rubocop:disable Metrics/AbcSize
