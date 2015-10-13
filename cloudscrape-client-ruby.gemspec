@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "cloud_scrape/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "cloud_scrape"
+  spec.name          = "cloudscrape-client"
   spec.version       = CloudScrape::VERSION
   spec.authors       = ["Charles J Hardy"]
   spec.email         = ["support@cloudscrape.com"]
 
   spec.summary       = "Wrapper for CloudScrape API"
   spec.description   = "Wrapper for CloudScrape API"
-  spec.homepage      = "https://github.com/cloudscrape/cloudscrape-client-ruby"
+  spec.homepage      = "http://cloudscrape.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
