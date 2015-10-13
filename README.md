@@ -1,9 +1,11 @@
-# CloudScrape Ruby Client
+# CloudScrape Ruby Client [![Build Status](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby.svg?branch=master)](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby)
 
 Wrapper for CloudScrape API.
 
 * [API Documentation](https://app.cloudscrape.com/#/api)
 * [Support](https://cloudscrape.zendesk.com/hc/en-us)
+
+
 
 ## Requirements
 
