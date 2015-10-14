@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Wrapper for CloudScrape API"
   spec.description   = "Wrapper for CloudScrape API"
-  spec.homepage      = "http://cloudscrape.com"
+  spec.homepage      = "https://github.com/cloudscrape/cloudscrape-client-ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

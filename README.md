@@ -15,7 +15,7 @@ Wrapper for CloudScrape API.
 
 Add this line to your application's Gemfile:
 
-    gem 'cloud_scrape'
+    gem 'cloudscrape-client'
 
 And then execute:
 
@@ -23,7 +23,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install cloud_scrape
+    $ gem install cloudscrape-client
 
 ## Configuration
 
