@@ -5,12 +5,13 @@ describe CloudScrape::Executions::Result do
 
   let(:response) do
     {
-      headers: %w(name age location),
-      rows: [
-        %w(Chuck 31 Manchester)
-      ]
+      headers: %w(name age location avatars errors),
+      rows: [rows]
     }
   end
+
+  let(:rows) { ['Chuck', 31, 'Manchester', avatars, nil] }
+  let(:avatars) { ['https://example.com/avatar1.png'] }
 
   describe "#as_hash" do
     subject(:as_hash) { instance.as_hash }
@@ -18,8 +19,10 @@ describe CloudScrape::Executions::Result do
     let(:expected_hash) do
       {
         "name" => "Chuck",
-        "age" => "31",
-        "location" => "Manchester"
+        "age" => 31,
+        "location" => "Manchester",
+        "avatars" => avatars,
+        "errors" => nil
       }
     end
 
@@ -40,7 +43,7 @@ describe CloudScrape::Executions::Result do
     subject(:age) { instance.age }
 
     it "results age" do
-      expect(age).to eq("31")
+      expect(age).to eq(31)
     end
   end
 
@@ -49,6 +52,22 @@ describe CloudScrape::Executions::Result do
 
     it "results location" do
       expect(location).to eq("Manchester")
+    end
+  end
+
+  describe "#avatars" do
+    subject(:avatars_method) { instance.avatars }
+
+    it "results avatars" do
+      expect(avatars_method).to eq(avatars)
+    end
+  end
+
+  describe "#errors" do
+    subject(:errors) { instance.errors }
+
+    it "results errors" do
+      expect(errors).to be_nil
     end
   end
 end
