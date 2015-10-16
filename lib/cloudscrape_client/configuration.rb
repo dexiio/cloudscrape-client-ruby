@@ -1,4 +1,4 @@
-class CloudScrape
+class CloudscrapeClient
   module Configure
     def configuration
       @configuration ||= Configuration.new

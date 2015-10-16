@@ -4,7 +4,7 @@ require "faraday_middleware"
 require "faraday/conductivity"
 require "faraday_middleware/multi_json"
 
-class CloudScrape
+class CloudscrapeClient
   class API
     InvalidApiKey = Class.new(StandardError)
     InvalidAccountId = Class.new(StandardError)
@@ -47,11 +47,15 @@ class CloudScrape
     end
 
     def account_id
-      CloudScrape.configuration.account_id
+      CloudscrapeClient.configuration.account_id
     end
 
     def api_key
-      CloudScrape.configuration.api_key
+      CloudscrapeClient.configuration.api_key
+    end
+
+    def user_agent_version
+      CloudscrapeClient.configuration.user_agent_version
     end
 
     # rubocop:disable Metrics/AbcSize
@@ -61,17 +65,17 @@ class CloudScrape
         faraday.request :url_encoded
 
         faraday.request :user_agent,
-                        app: CloudScrape.configuration.user_agent_app,
-                        version: CloudScrape.configuration.user_agent_version
+                        app: CloudscrapeClient.configuration.user_agent_app,
+                        version: user_agent_version
 
         faraday.request :request_headers,
                         accept: "application/json",
-                        "X-CloudScrape-Access" => access_key,
-                        "X-CloudScrape-Account" => account_id,
+                        "X-CloudscrapeClient-Access" => access_key,
+                        "X-CloudscrapeClient-Account" => account_id,
                         content_type: "application/json"
 
-        if CloudScrape.configuration.verbose
-          faraday.response :logger, CloudScrape.configuration.logger
+        if CloudscrapeClient.configuration.verbose
+          faraday.response :logger, CloudscrapeClient.configuration.logger
         end
 
         faraday.response :multi_json,

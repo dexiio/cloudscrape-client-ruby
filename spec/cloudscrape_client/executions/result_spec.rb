@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe CloudScrape::Executions::Result do
+describe CloudscrapeClient::Executions::Result do
   let(:instance) { described_class.new(response: response) }
 
   let(:response) do
@@ -10,8 +10,8 @@ describe CloudScrape::Executions::Result do
     }
   end
 
-  let(:rows) { ['Chuck', 31, 'Manchester', avatars, nil] }
-  let(:avatars) { ['https://example.com/avatar1.png'] }
+  let(:rows) { ["Chuck", 31, "Manchester", avatars, nil] }
+  let(:avatars) { ["https://example.com/avatar1.png"] }
 
   describe "#as_hash" do
     subject(:as_hash) { instance.as_hash }

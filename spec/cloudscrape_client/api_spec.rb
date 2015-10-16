@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe CloudScrape::API do
+RSpec.describe CloudscrapeClient::API do
   describe ".get" do
     subject(:get) do
       described_class.get(domain: domain, url: url, options: options)
@@ -23,19 +23,23 @@ RSpec.describe CloudScrape::API do
 
     context "invalid account id" do
       it "raises error" do
-        expect(CloudScrape.configuration)
+        expect(CloudscrapeClient.configuration)
           .to receive(:account_id).twice { nil }
 
-        expect { get }.to raise_error(CloudScrape::API::InvalidAccountId, nil)
+        expect { get }.to raise_error(
+          CloudscrapeClient::API::InvalidAccountId, nil
+        )
       end
     end
 
     context "invalid api key" do
       it "raises error" do
-        expect(CloudScrape.configuration)
+        expect(CloudscrapeClient.configuration)
           .to receive(:api_key).twice { nil }
 
-        expect { get }.to raise_error(CloudScrape::API::InvalidApiKey, nil)
+        expect { get }.to raise_error(
+          CloudscrapeClient::API::InvalidApiKey, nil
+        )
       end
     end
   end

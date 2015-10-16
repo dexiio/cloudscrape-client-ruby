@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe CloudScrape::RunDTO do
+describe CloudscrapeClient::RunDTO do
   subject(:run) do
     described_class.for(
       method: :post,
@@ -17,7 +17,7 @@ describe CloudScrape::RunDTO do
   let(:response) { double("Faraday::Response", status: 200, body: {}) }
 
   it "calls API with expected arguments" do
-    expect(CloudScrape::API).to receive(:post).with(
+    expect(CloudscrapeClient::API).to receive(:post).with(
       domain: "https://app.cloudscrape.com/api/",
       url: "runs/#{id}/#{url}?connect=true",
       options: {

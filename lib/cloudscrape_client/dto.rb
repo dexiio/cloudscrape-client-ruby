@@ -1,7 +1,7 @@
-require "cloud_scrape/api"
-require "cloud_scrape/validate"
+require "cloudscrape_client/api"
+require "cloudscrape_client/validate"
 
-class CloudScrape
+class CloudscrapeClient
   class DTO
     attr_reader :options
 
@@ -34,7 +34,7 @@ class CloudScrape
           api_key: api_key,
           format: "json"
         }.merge(params)
-      ).tap(&CloudScrape::Validate).body
+      ).tap(&CloudscrapeClient::Validate).body
     end
 
     def params
@@ -48,11 +48,11 @@ class CloudScrape
     private
 
     def domain
-      CloudScrape.configuration.base_url
+      CloudscrapeClient.configuration.base_url
     end
 
     def api_key
-      CloudScrape.configuration.api_key
+      CloudscrapeClient.configuration.api_key
     end
   end
 end

@@ -1,4 +1,4 @@
-class CloudScrape
+class CloudscrapeClient
   class Executions
     class Result
       attr_reader :response

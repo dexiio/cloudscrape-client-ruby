@@ -1,3 +1,3 @@
-class CloudScrape
+class CloudscrapeClient
   VERSION = "0.1.5"
 end

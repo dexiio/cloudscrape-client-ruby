@@ -1,4 +1,4 @@
-class CloudScrape
+class CloudscrapeClient
   class Validate
     def initialize(response:)
       @response = response
@@ -13,8 +13,8 @@ class CloudScrape
     end
 
     def validate
-      fail CloudScrape::InternalServerError, message if internal_server_error?
-      fail CloudScrape::NotFound, message if not_found?
+      fail CloudscrapeClient::InternalServerError, message if internal_error?
+      fail CloudscrapeClient::NotFound, message if not_found?
 
       true
     end
@@ -23,7 +23,7 @@ class CloudScrape
 
     attr_reader :response
 
-    def internal_server_error?
+    def internal_error?
       response.status == 500
     end
 
