@@ -1,11 +1,9 @@
-# CloudscrapeClient Ruby Client [![Build Status](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby.svg?branch=master)](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby)
+# CloudScrape Ruby Client [![Build Status](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby.svg?branch=master)](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby)
 
-Wrapper for CloudscrapeClient API.
+Wrapper for CloudScrape API.
 
 * [API Documentation](https://app.cloudscrape.com/#/api)
 * [Support](https://cloudscrape.zendesk.com/hc/en-us)
-
-
 
 ## Requirements
 
@@ -52,11 +50,11 @@ CLOUD_SCRAPE_CLIENT_TIMEOUT=60000
 CLOUD_SCRAPE_CLIENT_VERBOSE=true
 ```
 
-* `base_url` sets the CloudscrapeClient API url `https://app.cloudscrape.com/api/`
-* `api_key` sets the CloudscrapeClient API Key `nil`
-* `user_agent_app` sets the UserAgent app sent to CloudscrapeClient `CS-RUBY-CLIENT`
+* `base_url` sets the CloudScrape API url `https://app.cloudscrape.com/api/`
+* `api_key` sets the CloudScrape API Key `nil`
+* `user_agent_app` sets the UserAgent app sent to CloudScrape `CS-RUBY-CLIENT`
 * `user_agent_version` sets the UserAgent version sent to CloudscrapeClient `1.0`
-* `timeout` sets the CloudscrapeClient API request timeout `3600`
+* `timeout` sets the CloudScrape API request timeout `3600`
 * `verbose` should all output be printed to STDOUT `false`
 * `logger` Logger object. `Logger`
 

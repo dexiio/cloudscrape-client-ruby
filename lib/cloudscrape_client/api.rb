@@ -70,8 +70,8 @@ class CloudscrapeClient
 
         faraday.request :request_headers,
                         accept: "application/json",
-                        "X-CloudscrapeClient-Access" => access_key,
-                        "X-CloudscrapeClient-Account" => account_id,
+                        "X-CloudScrape-Access" => access_key,
+                        "X-CloudScrape-Account" => account_id,
                         content_type: "application/json"
 
         if CloudscrapeClient.configuration.verbose
