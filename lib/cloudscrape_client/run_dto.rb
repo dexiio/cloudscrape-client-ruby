@@ -1,4 +1,4 @@
-class CloudScrape
+class CloudscrapeClient
   class RunDTO < DTO
     def endpoint
       "runs/#{id}/#{url}?connect=#{connect}"

@@ -1,7 +1,7 @@
 require "spec_helper"
 
-describe CloudScrape::Validate do
-  subject(:validator) { [response].map(&CloudScrape::Validate).first }
+describe CloudscrapeClient::Validate do
+  subject(:validator) { [response].map(&CloudscrapeClient::Validate).first }
 
   let(:response) { double("Faraday::Response", status: status, body: body) }
   let(:body) { {} }
@@ -17,7 +17,9 @@ describe CloudScrape::Validate do
     let(:msg) { "java.lang.NullPointerException" }
 
     it "raises error" do
-      expect { validator }.to raise_error(CloudScrape::InternalServerError, msg)
+      expect { validator }.to raise_error(
+        CloudscrapeClient::InternalServerError, msg
+      )
     end
   end
 
@@ -26,7 +28,7 @@ describe CloudScrape::Validate do
     let(:body) { { error: true, code: 404 } }
 
     it "raises error" do
-      expect { validator }.to raise_error(CloudScrape::NotFound, "")
+      expect { validator }.to raise_error(CloudscrapeClient::NotFound, "")
     end
   end
 end

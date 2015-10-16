@@ -1,6 +1,6 @@
-# CloudScrape Ruby Client [![Build Status](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby.svg?branch=master)](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby)
+# CloudscrapeClient Ruby Client [![Build Status](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby.svg?branch=master)](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby)
 
-Wrapper for CloudScrape API.
+Wrapper for CloudscrapeClient API.
 
 * [API Documentation](https://app.cloudscrape.com/#/api)
 * [Support](https://cloudscrape.zendesk.com/hc/en-us)
@@ -15,7 +15,7 @@ Wrapper for CloudScrape API.
 
 Add this line to your application's Gemfile:
 
-    gem 'cloudscrape-client'
+    gem 'cloudscrape_client'
 
 And then execute:
 
@@ -23,12 +23,12 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install cloudscrape-client
+    $ gem install cloudscrape_client
 
 ## Configuration
 
 ``` ruby
-CloudScrape.configure do |config|
+CloudscrapeClient.configure do |config|
   config.base_url = "https://app.cloudscrape.com/api/"
   config.api_key = "pol6BFzsASYw4gQBl02b24nt"
   config.account_id = "a814a8r2-a664-4rcb-759c-9de21744117a"
@@ -52,11 +52,11 @@ CLOUD_SCRAPE_CLIENT_TIMEOUT=60000
 CLOUD_SCRAPE_CLIENT_VERBOSE=true
 ```
 
-* `base_url` sets the CloudScrape API url `https://app.cloudscrape.com/api/`
-* `api_key` sets the CloudScrape API Key `nil`
-* `user_agent_app` sets the UserAgent app sent to CloudScrape `CS-RUBY-CLIENT`
-* `user_agent_version` sets the UserAgent version sent to CloudScrape `1.0`
-* `timeout` sets the CloudScrape API request timeout `3600`
+* `base_url` sets the CloudscrapeClient API url `https://app.cloudscrape.com/api/`
+* `api_key` sets the CloudscrapeClient API Key `nil`
+* `user_agent_app` sets the UserAgent app sent to CloudscrapeClient `CS-RUBY-CLIENT`
+* `user_agent_version` sets the UserAgent version sent to CloudscrapeClient `1.0`
+* `timeout` sets the CloudscrapeClient API request timeout `3600`
 * `verbose` should all output be printed to STDOUT `false`
 * `logger` Logger object. `Logger`
 
@@ -64,7 +64,7 @@ CLOUD_SCRAPE_CLIENT_VERBOSE=true
 
 ``` ruby
 # Create client (optional arguments to override configuration)
-client = CloudScrape.new(
+client = CloudscrapeClient.new(
   api_key: "pol6BFzsASYw4gQBl02b24nt",
   account_id: "a814a8r2-a664-4rcb-759c-9de21744117a"
 )

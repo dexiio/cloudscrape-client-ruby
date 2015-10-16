@@ -1,11 +1,12 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "cloud_scrape/version"
+
+require "cloudscrape_client/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "cloudscrape-client"
-  spec.version       = CloudScrape::VERSION
+  spec.name          = "cloudscrape_client"
+  spec.version       = CloudscrapeClient::VERSION
   spec.authors       = ["Charles J Hardy"]
   spec.email         = ["support@cloudscrape.com"]
 

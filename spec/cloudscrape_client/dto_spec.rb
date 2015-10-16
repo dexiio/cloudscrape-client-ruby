@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe CloudScrape::DTO do
+RSpec.describe CloudscrapeClient::DTO do
   let(:instance) { described_class.new(options: options) }
   let(:options) { { something: :else } }
 
@@ -18,7 +18,7 @@ RSpec.describe CloudScrape::DTO do
     end
 
     it "calls off to API and returns response body" do
-      expect(CloudScrape::API).to receive(:get).with(
+      expect(CloudscrapeClient::API).to receive(:get).with(
         domain: domain,
         url: endpoint,
         options: {
@@ -43,7 +43,7 @@ RSpec.describe CloudScrape::DTO do
     end
 
     it "calls off to API and returns response body" do
-      expect(CloudScrape::API).to receive(:post).with(
+      expect(CloudscrapeClient::API).to receive(:post).with(
         domain: domain,
         url: endpoint,
         options: {
@@ -68,7 +68,7 @@ RSpec.describe CloudScrape::DTO do
     end
 
     it "calls off to API and returns response body" do
-      expect(CloudScrape::API).to receive(:delete).with(
+      expect(CloudscrapeClient::API).to receive(:delete).with(
         domain: domain,
         url: endpoint,
         options: {

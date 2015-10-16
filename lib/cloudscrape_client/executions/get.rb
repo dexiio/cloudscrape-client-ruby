@@ -1,4 +1,4 @@
-class CloudScrape
+class CloudscrapeClient
   class Executions
     class Get
       def initialize(response:)
