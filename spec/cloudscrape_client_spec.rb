@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe CloudScrape do
+describe CloudscrapeClient do
   let(:instance) { described_class.new }
 
   describe ".new" do
@@ -13,12 +13,12 @@ describe CloudScrape do
 
     it "sets configuration api key" do
       new
-      expect(CloudScrape.configuration.api_key).to eq(api_key)
+      expect(CloudscrapeClient.configuration.api_key).to eq(api_key)
     end
 
     it "sets configuration account id" do
       new
-      expect(CloudScrape.configuration.account_id).to eq(account_id)
+      expect(CloudscrapeClient.configuration.account_id).to eq(account_id)
     end
   end
 
@@ -28,7 +28,7 @@ describe CloudScrape do
     let(:id) { "123" }
 
     it "returns run object" do
-      expect(runs).to be_an_instance_of(CloudScrape::Runs)
+      expect(runs).to be_an_instance_of(CloudscrapeClient::Runs)
     end
   end
 
@@ -38,7 +38,7 @@ describe CloudScrape do
     let(:id) { "123" }
 
     it "returns run object" do
-      expect(executions).to be_an_instance_of(CloudScrape::Executions)
+      expect(executions).to be_an_instance_of(CloudscrapeClient::Executions)
     end
   end
 end

@@ -1,4 +1,4 @@
-class CloudScrape
+class CloudscrapeClient
   class ExecutionDTO < DTO
     def endpoint
       "executions/#{id}/#{url}"

@@ -1,6 +1,6 @@
 require "vcr_helper"
 
-describe CloudScrape::Runs do
+describe CloudscrapeClient::Runs do
   let(:instance) { described_class.new(id: id) }
 
   let(:id) { "27c719bb-f28f-49f5-aedf-dba2f8e60ba3" }
@@ -21,7 +21,7 @@ describe CloudScrape::Runs do
 
       it "calls off to RunDTO and returns" do
         VCR.use_cassette("valid/runs/execute_with_input") do
-          expect(execute).to eq("ea5da785-bcee-4a63-b714-b29eb9a3d852")
+          expect(execute).to eq("5226842f-175c-492f-835a-1f822676f10b")
         end
       end
     end

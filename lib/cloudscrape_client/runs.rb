@@ -1,6 +1,6 @@
-require "cloud_scrape/run_dto"
+require "cloudscrape_client/run_dto"
 
-class CloudScrape
+class CloudscrapeClient
   class Runs
     def initialize(id:)
       @id = id

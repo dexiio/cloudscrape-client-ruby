@@ -8,7 +8,7 @@ http_interactions:
       string: '{"api_key":"<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>","format":"json","url":"http://www.google.com"}'
     headers:
       User-Agent:
-      - CS-RUBY-CLIENT/1.0 (UNKNOWN; Chuck; 52289) ruby/2.2.1 (85; x86_64-darwin15)
+      - CS-RUBY-CLIENT/1.0 (Charless-Air; Chuck; 26883) ruby/2.2.1 (85; x86_64-darwin15)
       Content-Type:
       - application/json
       Accept:
@@ -27,19 +27,19 @@ http_interactions:
       X-Powered-By:
       - Express
       Date:
-      - Sun, 11 Oct 2015 12:37:23 GMT
+      - Fri, 16 Oct 2015 17:44:10 GMT
       Content-Type:
       - application/json
       Vary:
       - Accept-Encoding, User-Agent
       Set-Cookie:
-      - cssesid=s%3Ak-j8ZLcWIoa7Fb4j7C-lpsWhtFS1jY7A.LVMkbDw6hXuiDViEaDk2fMIT3MRgPbHDM%2B4nrF%2FzRKA;
+      - cssesid=s%3A_TX26BJe8-w2w-D8MNWjdoeFG-DXvAZc.9rsbSUY6t3ttAf5NtDBgN7gxi6wzHgdN3Tq80lrhnXw;
         Path=/
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"_id":"ea5da785-bcee-4a63-b714-b29eb9a3d852","state":"PENDING","starts":1444567043560,"finished":null}'
+      string: '{"_id":"5226842f-175c-492f-835a-1f822676f10b","state":"PENDING","starts":1445017450586,"finished":null}'
     http_version: 
-  recorded_at: Sun, 11 Oct 2015 12:37:25 GMT
+  recorded_at: Fri, 16 Oct 2015 17:44:11 GMT
 recorded_with: VCR 2.9.3

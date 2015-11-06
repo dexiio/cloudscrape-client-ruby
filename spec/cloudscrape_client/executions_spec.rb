@@ -1,6 +1,6 @@
 require "vcr_helper"
 
-describe CloudScrape::Executions do
+describe CloudscrapeClient::Executions do
   let(:instance) { described_class.new(id: id) }
 
   let(:id) { "3a8ea1f2-6781-4371-841f-66f6210a27b9" }
@@ -10,7 +10,7 @@ describe CloudScrape::Executions do
 
     it "calls off to ExecutionDTO and returns" do
       VCR.use_cassette("valid/executions/get") do
-        expect(get).to be_an_instance_of(CloudScrape::Executions::Get)
+        expect(get).to be_an_instance_of(CloudscrapeClient::Executions::Get)
       end
     end
   end
@@ -20,7 +20,8 @@ describe CloudScrape::Executions do
 
     it "calls off to ExecutionDTO and returns" do
       VCR.use_cassette("valid/executions/result") do
-        expect(result).to be_an_instance_of(CloudScrape::Executions::Result)
+        expect(result)
+          .to be_an_instance_of(CloudscrapeClient::Executions::Result)
       end
     end
   end

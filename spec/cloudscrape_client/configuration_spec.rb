@@ -1,7 +1,7 @@
 require "spec_helper"
 
-RSpec.describe CloudScrape::Configure do
-  let(:instance) { Class.new { extend CloudScrape::Configure } }
+RSpec.describe CloudscrapeClient::Configure do
+  let(:instance) { Class.new { extend CloudscrapeClient::Configure } }
 
   describe "#base_url" do
     subject { instance.configuration.base_url }

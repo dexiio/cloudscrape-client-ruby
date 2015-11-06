@@ -1,8 +1,8 @@
-require "cloud_scrape/execution_dto"
-require "cloud_scrape/executions/get"
-require "cloud_scrape/executions/result"
+require "cloudscrape_client/execution_dto"
+require "cloudscrape_client/executions/get"
+require "cloudscrape_client/executions/result"
 
-class CloudScrape
+class CloudscrapeClient
   class Executions
     def initialize(id:)
       @id = id

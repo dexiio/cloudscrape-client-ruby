@@ -1,4 +1,4 @@
-class CloudScrape
+class CloudscrapeClient
   class Executions
     class Result
       attr_reader :response
@@ -23,7 +23,7 @@ class CloudScrape
       end
 
       def rows
-        response.fetch(:rows, [[]]).flatten
+        response.fetch(:rows, [[]]).first
       end
 
       def define_method_for_header
