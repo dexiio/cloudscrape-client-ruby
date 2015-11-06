@@ -22,7 +22,7 @@ RSpec.describe CloudscrapeClient::DTO do
         domain: domain,
         url: endpoint,
         options: {
-          api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
+          api_key: CloudscrapeClient.configuration.api_key,
           format: "json"
         }
       ) { response }
@@ -47,7 +47,7 @@ RSpec.describe CloudscrapeClient::DTO do
         domain: domain,
         url: endpoint,
         options: {
-          api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
+          api_key: CloudscrapeClient.configuration.api_key,
           format: "json"
         }
       ) { response }
@@ -72,7 +72,7 @@ RSpec.describe CloudscrapeClient::DTO do
         domain: domain,
         url: endpoint,
         options: {
-          api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
+          api_key: CloudscrapeClient.configuration.api_key,
           format: "json"
         }
       ) { response }

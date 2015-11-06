@@ -8,10 +8,10 @@ VCR.configure do |c|
   c.hook_into :webmock
 
   c.filter_sensitive_data("<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>") do
-    ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"]
+    CloudscrapeClient.configuration.api_key
   end
 
   c.filter_sensitive_data("<CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE>") do
-    ENV["CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE"]
+    CloudscrapeClient.configuration.account_id
   end
 end
