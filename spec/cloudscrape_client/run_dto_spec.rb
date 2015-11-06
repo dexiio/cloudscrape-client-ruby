@@ -21,7 +21,7 @@ describe CloudscrapeClient::RunDTO do
       domain: "https://app.cloudscrape.com/api/",
       url: "runs/#{id}/#{url}?connect=true",
       options: {
-        api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
+        api_key: CloudscrapeClient.configuration.api_key,
         format: "json",
         url: input[:url]
       }

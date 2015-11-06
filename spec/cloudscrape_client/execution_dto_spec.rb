@@ -12,7 +12,7 @@ describe CloudscrapeClient::ExecutionDTO do
       domain: "https://app.cloudscrape.com/api/",
       url: "executions/#{id}/#{url}",
       options: {
-        api_key: ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"],
+        api_key: CloudscrapeClient.configuration.api_key,
         format: "json"
       }
     ) { response }

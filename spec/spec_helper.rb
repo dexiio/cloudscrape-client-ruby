@@ -21,10 +21,10 @@ RSpec.configure do |config|
 
   config.before do
     CloudscrapeClient.configuration.api_key =
-      ENV["CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE"]
+      ENV.fetch("CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE", "123")
 
     CloudscrapeClient.configuration.account_id =
-      ENV["CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE"]
+      ENV.fetch("CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE", "456")
 
     CloudscrapeClient.configuration.verbose = false
   end
