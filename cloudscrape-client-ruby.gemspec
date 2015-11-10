@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "cloudscrape_client/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "cloudscrape_client"
+  spec.name          = "cloudscrape-client"
   spec.version       = CloudscrapeClient::VERSION
   spec.authors       = ["Charles J Hardy"]
   spec.email         = ["support@cloudscrape.com"]

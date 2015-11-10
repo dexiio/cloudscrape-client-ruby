@@ -1,4 +1,4 @@
-# CloudScrape Ruby Client [![Build Status](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby.svg?branch=master)](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby)
+# CloudScrape Ruby Client [![Build Status](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby.svg?branch=master)](https://travis-ci.org/cloudscrape/cloudscrape-client-ruby) [![Gem Version](https://badge.fury.io/rb/cloudscrape-client.svg)](https://badge.fury.io/rb/cloudscrape-client)
 
 Wrapper for CloudScrape API.
 
@@ -13,7 +13,7 @@ Wrapper for CloudScrape API.
 
 Add this line to your application's Gemfile:
 
-    gem 'cloudscrape_client'
+    gem 'cloudscrape-client'
 
 And then execute:
 
@@ -21,7 +21,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install cloudscrape_client
+    $ gem install cloudscrape-client
 
 ## Configuration
 
