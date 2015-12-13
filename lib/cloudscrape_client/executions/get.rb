@@ -1,6 +1,8 @@
 class CloudscrapeClient
   class Executions
     class Get
+      attr_reader :response
+
       def initialize(response:)
         @response = response
       end
@@ -28,10 +30,6 @@ class CloudscrapeClient
       def ok?
         %w(OK).include?(state)
       end
-
-      private
-
-      attr_reader :response
 
       def state
         response.fetch(:state)
