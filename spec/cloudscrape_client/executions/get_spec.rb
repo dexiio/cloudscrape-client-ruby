@@ -71,4 +71,12 @@ describe CloudscrapeClient::Executions::Get do
       expect(ok).to eq(true)
     end
   end
+
+  describe "#state" do
+    subject(:state_call) { instance.state }
+
+    it "results state" do
+      expect(state_call).to eq(state)
+    end
+  end
 end
