@@ -1,6 +1,7 @@
 require "cloudscrape_client/execution_dto"
 require "cloudscrape_client/executions/get"
 require "cloudscrape_client/executions/result"
+require "cloudscrape_client/executions/results"
 
 class CloudscrapeClient
   class Executions
@@ -13,7 +14,12 @@ class CloudscrapeClient
     end
 
     def result
-      Result.new(response: dto("result", :get))
+      warn "[DEPRECATION] `result` is deprecated. Please use `results` instead."
+      results.collection.first
+    end
+
+    def results
+      @results ||= Results.new(response: dto("result", :get))
     end
 
     def remove
