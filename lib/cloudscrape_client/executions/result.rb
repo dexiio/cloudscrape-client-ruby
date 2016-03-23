@@ -1,10 +1,11 @@
 class CloudscrapeClient
   class Executions
     class Result
-      attr_reader :response
+      attr_reader :row
 
-      def initialize(response:)
-        @response = response
+      def initialize(headers:, row:)
+        @headers = headers
+        @row = row
         build
       end
 
@@ -13,18 +14,10 @@ class CloudscrapeClient
       end
 
       def as_hash
-        @as_hash ||= Hash[headers.zip(rows)]
+        @as_hash ||= Hash[@headers.zip(row)]
       end
 
       private
-
-      def headers
-        response.fetch(:headers, [])
-      end
-
-      def rows
-        response.fetch(:rows, [[]]).first
-      end
 
       def define_method_for_header
         ->(key, value) { self.class.send(:define_method, key) { value } }
