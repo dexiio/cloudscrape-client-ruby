@@ -1,7 +1,9 @@
 require "spec_helper"
 
 describe CloudscrapeClient::Executions::Result do
-  let(:instance) { described_class.new(response: response) }
+  let(:instance) do
+    described_class.new(headers: response[:headers], row: response[:rows].first)
+  end
 
   let(:response) do
     {
