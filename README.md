@@ -105,9 +105,10 @@ client.executions(execution_id).remove
 Methods are dynamically defined based on headers.
 
 ``` ruby
-execution = client.executions(execution_id).result
+execution = client.executions(execution_id).results
 execution.response # => { headers: [...], rows: [...] }
-execution.as_hash # => { ... }
+execution.collection # => [ #<CloudscrapeClient::Executions::Result:0x007ffd7d132950> ]
+execution.as_hash # => [ { ... } ]
 ```
 
 #### Executions (Stop) [Docs](https://app.cloudscrape.com/#/api/sections/executions/stop)
