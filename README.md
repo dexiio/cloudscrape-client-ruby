@@ -2,8 +2,8 @@
 
 Wrapper for CloudScrape API.
 
-* [API Documentation](https://app.cloudscrape.com/#/api)
-* [Support](https://cloudscrape.zendesk.com/hc/en-us)
+* [API Documentation](https://app.dexi.io/#/api)
+* [Support](http://support.dexi.io/)
 
 ## Requirements
 
@@ -27,7 +27,7 @@ Or install it yourself as:
 
 ``` ruby
 CloudscrapeClient.configure do |config|
-  config.base_url = "https://app.cloudscrape.com/api/"
+  config.base_url = "https://api.dexi.io/"
   config.api_key = "pol6BFzsASYw4gQBl02b24nt"
   config.account_id = "a814a8r2-a664-4rcb-759c-9de21744117a"
   config.user_agent_app = "MY-AGENT"
@@ -41,7 +41,7 @@ end
 Some configuration can be set by environment variables:
 
 ``` bash
-CLOUD_SCRAPE_CLIENT_BASE_URL="https://app.cloudscrape.com/api/"
+CLOUD_SCRAPE_CLIENT_BASE_URL="https://api.dexi.io/"
 CLOUD_SCRAPE_CLIENT_API_KEY="pol6BFzsASYw4gQBl02b24nt"
 CLOUD_SCRAPE_CLIENT_ACCOUNT_ID="a814a8r2-a664-4rcb-759c-9de21744117a"
 CLOUD_SCRAPE_CLIENT_USER_AGENT_APP="MY-AGENT"
@@ -50,7 +50,7 @@ CLOUD_SCRAPE_CLIENT_TIMEOUT=60000
 CLOUD_SCRAPE_CLIENT_VERBOSE=true
 ```
 
-* `base_url` sets the CloudScrape API url `https://app.cloudscrape.com/api/`
+* `base_url` sets the CloudScrape API url `https://api.dexi.io/`
 * `api_key` sets the CloudScrape API Key `nil`
 * `user_agent_app` sets the UserAgent app sent to CloudScrape `CS-RUBY-CLIENT`
 * `user_agent_version` sets the UserAgent version sent to CloudscrapeClient `1.0`
@@ -68,13 +68,13 @@ client = CloudscrapeClient.new(
 )
 ```
 
-#### Runs (Execute) [Docs](https://app.cloudscrape.com/#/api/sections/runs/execute)
+#### Runs (Execute) [Docs](https://app.dexi.io/#/api/sections/runs/execute)
 
 ``` ruby
 execution_id = client.runs(run_id).execute
 ```
 
-#### Runs (Execute with Input) [Docs](https://app.cloudscrape.com/#/api/sections/runs/executeWithInput)
+#### Runs (Execute with Input) [Docs](https://app.dexi.io/#/api/sections/runs/executeWithInput)
 
 When `connect: true` is passed execution will upload it's result to configured integrations for this run.
 
@@ -82,7 +82,7 @@ When `connect: true` is passed execution will upload it's result to configured i
 execution_id = client.runs(run_id).execute(input: { url: 'http://google.com' }, connect: true)
 ```
 
-#### Executions (Get) [Docs](https://app.cloudscrape.com/#/api/sections/executions/get)
+#### Executions (Get) [Docs](https://app.dexi.io/#/api/sections/executions/get)
 
 ``` ruby
 execution = client.executions(execution_id).get
@@ -94,13 +94,13 @@ execution.stopped? # => false
 execution.ok? # => false
 ```
 
-#### Executions (Remove) [Docs](https://app.cloudscrape.com/#/api/sections/executions/remove)
+#### Executions (Remove) [Docs](https://app.dexi.io/#/api/sections/executions/remove)
 
 ``` ruby
 client.executions(execution_id).remove
 ```
 
-#### Executions (Get Result) [Docs](https://app.cloudscrape.com/#/api/sections/executions/getResult)
+#### Executions (Get Result) [Docs](https://app.dexi.io/#/api/sections/executions/getResult)
 
 Methods are dynamically defined based on headers.
 
@@ -111,13 +111,13 @@ execution.collection # => [ #<CloudscrapeClient::Executions::Result:0x007ffd7d13
 execution.as_hash # => [ { ... } ]
 ```
 
-#### Executions (Stop) [Docs](https://app.cloudscrape.com/#/api/sections/executions/stop)
+#### Executions (Stop) [Docs](https://app.dexi.io/#/api/sections/executions/stop)
 
 ``` ruby
 client.executions(execution_id).stop
 ```
 
-#### Executions (Continue) [Docs](https://app.cloudscrape.com/#/api/sections/executions/continue)
+#### Executions (Continue) [Docs](https://app.dexi.io/#/api/sections/executions/continue)
 
 ``` ruby
 client.executions(execution_id).continue

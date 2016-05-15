@@ -37,8 +37,7 @@ class CloudscrapeClient
       private
 
       def base_url_default
-        ENV["CLOUD_SCRAPE_CLIENT_BASE_URL"] ||
-          "https://app.cloudscrape.com/api/"
+        ENV["CLOUD_SCRAPE_CLIENT_BASE_URL"] || "https://api.dexi.io/"
       end
 
       def user_agent_app_default

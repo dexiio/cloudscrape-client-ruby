@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app.cloudscrape.com/api/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute/inputs?connect=true
+    uri: https://api.dexi.io/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute/inputs?connect=true
     body:
       encoding: UTF-8
       string: '{"api_key":"<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>","format":"json","url":"http://www.google.com"}'

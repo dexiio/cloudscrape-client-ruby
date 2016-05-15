@@ -6,11 +6,11 @@ RSpec.describe CloudscrapeClient::Configure do
   describe "#base_url" do
     subject { instance.configuration.base_url }
 
-    let(:new_url) { "https://app.cloudscrape.com/api/v2/" }
-    let(:env_var_url) { "https://app.cloudscrape.com/api/v3/" }
+    let(:new_url) { "https://api.dexi.io/v2/" }
+    let(:env_var_url) { "https://api.dexi.io/v3/" }
 
     it "returns default" do
-      expect(subject).to eq("https://app.cloudscrape.com/api/")
+      expect(subject).to eq("https://api.dexi.io/")
     end
 
     it "returns altered" do

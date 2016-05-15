@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name          = "cloudscrape-client"
   spec.version       = CloudscrapeClient::VERSION
   spec.authors       = ["Charles J Hardy"]
-  spec.email         = ["support@cloudscrape.com"]
+  spec.email         = ["support@dexi.io"]
 
   spec.summary       = "Wrapper for CloudScrape API"
   spec.description   = "Wrapper for CloudScrape API"
