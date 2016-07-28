@@ -18,7 +18,7 @@ describe CloudscrapeClient::RunDTO do
 
   it "calls API with expected arguments" do
     expect(CloudscrapeClient::API).to receive(:post).with(
-      domain: "https://app.cloudscrape.com/api/",
+      domain: "https://api.dexi.io/",
       url: "runs/#{id}/#{url}?connect=true",
       options: {
         api_key: CloudscrapeClient.configuration.api_key,

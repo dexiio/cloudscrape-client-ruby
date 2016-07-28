@@ -37,7 +37,7 @@
 		{
 			"id": "35175ab6-cccf-b3e6-692c-6a66b8c3d30f",
 			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01",
+			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
@@ -49,7 +49,7 @@
 			"helperAttributes": {},
 			"time": 1444436953179,
 			"name": "Get",
-			"description": "Get execution\n\nhttps://app.cloudscrape.com/#/api/sections/executions/get",
+			"description": "Get execution\n\nhttps://app.dexi.io/#/api/sections/executions/get",
 			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
 			"responses": [],
 			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"
@@ -57,7 +57,7 @@
 		{
 			"id": "744fd5a4-c477-2fe8-3bbd-66646767b46d",
 			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01/stop",
+			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01/stop",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "POST",
@@ -69,7 +69,7 @@
 			"helperAttributes": {},
 			"time": 1444436980442,
 			"name": "Stop",
-			"description": "Stop execution. Note that an execution does not stop immediately.\n\nhttps://app.cloudscrape.com/#/api/sections/executions/stop",
+			"description": "Stop execution. Note that an execution does not stop immediately.\n\nhttps://app.dexi.io/#/api/sections/executions/stop",
 			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
 			"responses": [],
 			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"
@@ -77,7 +77,7 @@
 		{
 			"id": "96ea0c3f-a697-e240-e554-c056680beba4",
 			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01/continue",
+			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01/continue",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "POST",
@@ -89,7 +89,7 @@
 			"helperAttributes": {},
 			"time": 1444436996122,
 			"name": "Continue",
-			"description": "Continue a stopped execution. Note that the execution might not start immediately.\n\nhttps://app.cloudscrape.com/#/api/sections/executions/continue",
+			"description": "Continue a stopped execution. Note that the execution might not start immediately.\n\nhttps://app.dexi.io/#/api/sections/executions/continue",
 			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
 			"responses": [],
 			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"
@@ -97,7 +97,7 @@
 		{
 			"id": "c8d593d5-fac6-0dbf-6710-aca83c8aeecc",
 			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01",
+			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "DELETE",
@@ -109,7 +109,7 @@
 			"helperAttributes": {},
 			"time": 1444437024303,
 			"name": "Remove",
-			"description": "Delete execution permanently\n\nhttps://app.cloudscrape.com/#/api/sections/executions/remove",
+			"description": "Delete execution permanently\n\nhttps://app.dexi.io/#/api/sections/executions/remove",
 			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
 			"responses": [],
 			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"
@@ -117,7 +117,7 @@
 		{
 			"id": "d3ecd8c7-c9cf-8c95-5d8b-5a671bfe9403",
 			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://app.cloudscrape.com/api/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute/inputs?connect=true",
+			"url": "https://api.dexi.io/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute/inputs?connect=true",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "POST",
@@ -129,7 +129,7 @@
 			"helperAttributes": {},
 			"time": 1444566409009,
 			"name": "Execute with Input",
-			"description": "Starts new execution of run using the input from the body instead of the run itself.\n\nhttps://app.cloudscrape.com/#/api/sections/runs/executeWithInput",
+			"description": "Starts new execution of run using the input from the body instead of the run itself.\n\nhttps://app.dexi.io/#/api/sections/runs/executeWithInput",
 			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
 			"responses": [],
 			"rawModeData": "{\n    \"url\": \"http://google.com\"\n}"
@@ -137,7 +137,7 @@
 		{
 			"id": "e505df88-7b71-2e0d-798c-8ed3321aca77",
 			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://app.cloudscrape.com/api/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute",
+			"url": "https://api.dexi.io/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute",
 			"pathVariables": {},
 			"preRequestScript": "",
 			"method": "POST",
@@ -145,7 +145,7 @@
 			"data": [],
 			"dataMode": "params",
 			"name": "Execute",
-			"description": "Start new execution of run.\n\nhttps://app.cloudscrape.com/#/api/sections/runs/execute",
+			"description": "Start new execution of run.\n\nhttps://app.dexi.io/#/api/sections/runs/execute",
 			"descriptionFormat": "html",
 			"time": 1444433278119,
 			"version": 2,
@@ -159,7 +159,7 @@
 		{
 			"id": "fd463224-a926-201f-75db-8ef02b8c257b",
 			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01/result",
+			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01/result",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
@@ -171,7 +171,7 @@
 			"helperAttributes": {},
 			"time": 1444436918679,
 			"name": "Result",
-			"description": "Get execution result. As a result can be very large it is advised that you use some method of streaming to parse the result and insert it into your data store of choice.\n\nhttps://app.cloudscrape.com/#/api/sections/executions/getResult",
+			"description": "Get execution result. As a result can be very large it is advised that you use some method of streaming to parse the result and insert it into your data store of choice.\n\nhttps://app.dexi.io/#/api/sections/executions/getResult",
 			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
 			"responses": [],
 			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"

@@ -9,7 +9,7 @@ describe CloudscrapeClient::ExecutionDTO do
 
   it "calls API with expected arguments" do
     expect(CloudscrapeClient::API).to receive(:get).with(
-      domain: "https://app.cloudscrape.com/api/",
+      domain: "https://api.dexi.io/",
       url: "executions/#{id}/#{url}",
       options: {
         api_key: CloudscrapeClient.configuration.api_key,
