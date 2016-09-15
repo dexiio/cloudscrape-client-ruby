@@ -1,3 +1,5 @@
+require "cloudscrape_client/executions/result/file"
+
 class CloudscrapeClient
   class Executions
     class Result
@@ -20,7 +22,11 @@ class CloudscrapeClient
       private
 
       def define_method_for_header
-        ->(key, value) { self.class.send(:define_method, key) { value } }
+        lambda do |key, value|
+          self.class.send(:define_method, key) do
+            value.to_s.include?(File::FILE_KEYWORD) ? File.new(value) : value
+          end
+        end
       end
     end
   end

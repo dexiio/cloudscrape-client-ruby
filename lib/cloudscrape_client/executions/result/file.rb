@@ -4,8 +4,9 @@ class CloudscrapeClient
       class File
         ParseError = Class.new(StandardError)
 
+        FILE_KEYWORD = "FILE".freeze
         # https://regex101.com/r/zS8xF6/1
-        REGEX = /\AFILE:(?'contentType'\w+\/\w+);(?'providerId'\d+);(?'id'[a-z0-9-]*)\Z/
+        REGEX = /\A#{FILE_KEYWORD}:(?'contentType'\w+\/\w+);(?'providerId'\d+);(?'id'[a-z0-9-]*)\Z/
         EXPECTED_FORMAT = "FILE:<CONTENT_TYPE>;<PROVIDER_ID>;<FILE_ID>"
 
         def initialize(value)
