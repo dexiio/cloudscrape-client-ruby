@@ -22,6 +22,7 @@ describe CloudscrapeClient::RunDTO do
     expect(CloudscrapeClient::API).to receive(:post).with(
       domain: "https://api.dexi.io/",
       url: "runs/#{id}/#{url}?connect=true",
+      content_type: CloudscrapeClient::API::DEFAULT_CONTENT_TYPE,
       options: {
         api_key: CloudscrapeClient.configuration.api_key,
         format: "json",

@@ -32,6 +32,7 @@ class CloudscrapeClient
         method,
         domain: domain,
         url: endpoint,
+        content_type: content_type_or_default,
         options: {
           api_key: api_key,
           format: "json"
@@ -41,6 +42,13 @@ class CloudscrapeClient
 
     def params
       {}
+    end
+
+    def content_type
+    end
+
+    def content_type_or_default
+      content_type || CloudscrapeClient::API::DEFAULT_CONTENT_TYPE
     end
 
     def endpoint

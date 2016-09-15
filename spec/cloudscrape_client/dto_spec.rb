@@ -23,6 +23,7 @@ RSpec.describe CloudscrapeClient::DTO do
       expect(CloudscrapeClient::API).to receive(:get).with(
         domain: domain,
         url: endpoint,
+        content_type: "application/json",
         options: {
           api_key: CloudscrapeClient.configuration.api_key,
           format: "json"
@@ -48,6 +49,7 @@ RSpec.describe CloudscrapeClient::DTO do
       expect(CloudscrapeClient::API).to receive(:post).with(
         domain: domain,
         url: endpoint,
+        content_type: "application/json",
         options: {
           api_key: CloudscrapeClient.configuration.api_key,
           format: "json"
@@ -73,6 +75,7 @@ RSpec.describe CloudscrapeClient::DTO do
       expect(CloudscrapeClient::API).to receive(:delete).with(
         domain: domain,
         url: endpoint,
+        content_type: "application/json",
         options: {
           api_key: CloudscrapeClient.configuration.api_key,
           format: "json"
@@ -94,6 +97,32 @@ RSpec.describe CloudscrapeClient::DTO do
 
     it "raises an error" do
       expect { instance.endpoint }.to raise_error(NotImplementedError, msg)
+    end
+  end
+
+  describe "#content_type" do
+    subject(:content_type) { instance.content_type }
+
+    it "returns nil" do
+      expect(content_type).to be_nil
+    end
+  end
+
+  describe "#content_type_or_default" do
+    subject(:content_type_or_default) { instance.content_type_or_default }
+
+    it "returns default content type" do
+      expect(content_type_or_default).to eq("application/json")
+    end
+
+    context "when context type is not nil" do
+      before do
+        allow(instance).to receive(:content_type) { "image/png" }
+      end
+
+      it "returns content type" do
+        expect(content_type_or_default).to eq("image/png")
+      end
     end
   end
 end

@@ -12,29 +12,45 @@ class CloudscrapeClient
     end
 
     def get
-      Get.new(response: dto("", :get))
+      response = dto(
+        url: "",
+        method: :get
+      )
+
+      Get.new(response: response)
     end
 
     def results
-      @results ||= Results.new(response: dto("result", :get))
+      response = dto(
+        url: "result",
+        method: :get
+      )
+
+      Results.new(response: response)
     end
 
     def remove
-      dto("", :delete)
+      dto(url: "", method: :delete)
     end
 
     def stop
-      dto("stop", :post)
+      dto(url: "stop", method: :post)
     end
 
     def continue
-      dto("continue", :post)
+      dto(url: "continue", method: :post)
     end
 
     private
 
-    def dto(url, method)
-      ExecutionDTO.for(id: @id, url: url, method: method)
+    def dto(url:, method:, record_id: nil, content_type: nil)
+      ExecutionDTO.for(
+        url: url,
+        method: method,
+        content_type: content_type,
+        execution_id: @id,
+        record_id: record_id
+      )
     end
   end
 end

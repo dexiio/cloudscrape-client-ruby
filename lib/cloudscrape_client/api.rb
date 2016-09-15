@@ -11,6 +11,8 @@ class CloudscrapeClient
     InvalidApiKey = Class.new(StandardError)
     InvalidAccountId = Class.new(StandardError)
 
+    DEFAULT_CONTENT_TYPE = "application/json"
+
     def self.get(*args)
       new.get(*args)
     end
@@ -23,20 +25,21 @@ class CloudscrapeClient
       new.delete(*args)
     end
 
-    def get(domain:, url:, options: {})
-      connection(domain).get(URI.escape(url), options)
+    def get(domain:, url:, content_type:, options: {})
+      connection(domain: domain, content_type: content_type)
+        .get(URI.escape(url), options)
     end
 
-    def post(domain:, url:, options: {})
-      connection(domain).post do |req|
+    def post(domain:, url:, content_type:, options: {})
+      connection(domain: domain, content_type: content_type).post do |req|
         req.url URI.escape(url)
-        req.headers["Content-Type"] = "application/json"
         req.body = options.to_json
       end
     end
 
-    def delete(domain:, url:, options: {})
-      connection(domain).delete(URI.escape(url), options)
+    def delete(domain:, url:, content_type:, options: {})
+      connection(domain: domain, content_type: content_type)
+        .delete(URI.escape(url), options)
     end
 
     private
@@ -62,7 +65,7 @@ class CloudscrapeClient
 
     # rubocop:disable Metrics/AbcSize
     # rubocop:disable Metrics/MethodLength
-    def connection(domain)
+    def connection(domain:, content_type:)
       Faraday.new(url: domain) do |faraday|
         faraday.request :url_encoded
 
@@ -74,7 +77,7 @@ class CloudscrapeClient
                         accept: "application/json",
                         "X-CloudScrape-Access" => access_key,
                         "X-CloudScrape-Account" => account_id,
-                        content_type: "application/json"
+                        content_type: content_type || DEFAULT_CONTENT_TYPE
 
         if CloudscrapeClient.configuration.verbose
           faraday.response :logger, CloudscrapeClient.configuration.logger
