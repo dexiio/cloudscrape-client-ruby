@@ -15,11 +15,6 @@ class CloudscrapeClient
       Get.new(response: dto("", :get))
     end
 
-    def result
-      warn "[DEPRECATION] `result` is deprecated. Please use `results` instead."
-      results.collection.first
-    end
-
     def results
       @results ||= Results.new(response: dto("result", :get))
     end

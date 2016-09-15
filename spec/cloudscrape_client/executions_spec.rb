@@ -17,13 +17,13 @@ describe CloudscrapeClient::Executions do
     end
   end
 
-  describe "#result" do
-    subject(:result) { instance.result }
+  describe "#results" do
+    subject(:results) { instance.results }
 
     it "calls off to ExecutionDTO and returns" do
       VCR.use_cassette("valid/executions/result") do
-        expect(result)
-          .to be_an_instance_of(CloudscrapeClient::Executions::Result)
+        expect(results)
+          .to be_an_instance_of(CloudscrapeClient::Executions::Results)
       end
     end
   end
