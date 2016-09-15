@@ -1,12 +1,24 @@
+# frozen_string_literal: true
+
 class CloudscrapeClient
   class Executions
     class Result
       class File
         ParseError = Class.new(StandardError)
 
-        FILE_KEYWORD = "FILE".freeze
+        FILE_KEYWORD = "FILE"
         # https://regex101.com/r/zS8xF6/1
-        REGEX = /\A#{FILE_KEYWORD}:(?'contentType'\w+\/\w+);(?'providerId'\d+);(?'id'[a-z0-9-]*)\Z/
+        REGEX = %r{
+          \A                       # start of line
+          #{FILE_KEYWORD}          # detector keywork
+          :                        # detector vs content split
+          (?'contentType'\w+\/\w+) # content type
+          ;                        # first split
+          (?'providerId'\d+)       # Dexi provider id
+          ;                        # second split
+          (?'id'[a-z0-9-]*)        # file id
+          \Z                       # end of line
+        }x
         EXPECTED_FORMAT = "FILE:<CONTENT_TYPE>;<PROVIDER_ID>;<FILE_ID>"
 
         def initialize(value)

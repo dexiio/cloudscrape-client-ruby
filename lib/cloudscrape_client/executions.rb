@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "cloudscrape_client/execution_dto"
 require "cloudscrape_client/executions/get"
 require "cloudscrape_client/executions/result"

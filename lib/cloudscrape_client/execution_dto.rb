@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CloudscrapeClient
   class ExecutionDTO < DTO
     def endpoint

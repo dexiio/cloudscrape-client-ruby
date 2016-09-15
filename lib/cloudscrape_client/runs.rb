@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "cloudscrape_client/run_dto"
 
 class CloudscrapeClient

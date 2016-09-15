@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "cloudscrape_client/api"
 require "cloudscrape_client/validate"
 
@@ -42,7 +44,7 @@ class CloudscrapeClient
     end
 
     def endpoint
-      fail NotImplementedError, "Inheriting class must implement"
+      raise NotImplementedError, "Inheriting class must implement"
     end
 
     private

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe CloudscrapeClient::Executions::Result::File do
@@ -16,7 +18,8 @@ describe CloudscrapeClient::Executions::Result::File do
       let(:value) { "FILE:;26071;" }
 
       let(:msg) do
-        "Expected: FILE:<CONTENT_TYPE>;<PROVIDER_ID>;<FILE_ID>, Got: FILE:;26071;"
+        "Expected: FILE:<CONTENT_TYPE>;<PROVIDER_ID>;<FILE_ID>, \
+Got: FILE:;26071;"
       end
 
       it "raises an error" do
@@ -46,7 +49,8 @@ describe CloudscrapeClient::Executions::Result::File do
       let(:value) { "FILE:;26071;11fed7f0-a508-4dc8-956a-481535c6f88a" }
 
       let(:msg) do
-        "Expected: FILE:<CONTENT_TYPE>;<PROVIDER_ID>;<FILE_ID>, Got: FILE:;26071;11fed7f0-a508-4dc8-956a-481535c6f88a"
+        "Expected: FILE:<CONTENT_TYPE>;<PROVIDER_ID>;<FILE_ID>, \
+Got: FILE:;26071;11fed7f0-a508-4dc8-956a-481535c6f88a"
       end
 
       it "raises an error" do

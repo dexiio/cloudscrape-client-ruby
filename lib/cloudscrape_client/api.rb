@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "digest"
 require "faraday"
 require "faraday_middleware"
@@ -40,8 +42,8 @@ class CloudscrapeClient
     private
 
     def access_key
-      fail InvalidAccountId, account_id unless account_id
-      fail InvalidApiKey, api_key unless api_key
+      raise InvalidAccountId, account_id unless account_id
+      raise InvalidApiKey, api_key unless api_key
 
       Digest::MD5.hexdigest(account_id + api_key)
     end

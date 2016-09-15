@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe CloudscrapeClient::Executions::Result do
@@ -12,6 +14,7 @@ describe CloudscrapeClient::Executions::Result do
     }
   end
 
+  let(:file) { "FILE:image/png;26071;11fed7f0-a508-4dc8-956a-481535c6f88a" }
   let(:avatars) { ["https://example.com/avatar1.png"] }
   let(:rows) do
     [
@@ -19,7 +22,7 @@ describe CloudscrapeClient::Executions::Result do
       31,
       "Manchester",
       avatars,
-      "FILE:image/png;26071;11fed7f0-a508-4dc8-956a-481535c6f88a",
+      file,
       nil
     ]
   end
@@ -33,7 +36,7 @@ describe CloudscrapeClient::Executions::Result do
         "age" => 31,
         "location" => "Manchester",
         "avatars" => avatars,
-        "screenshot" => "FILE:image/png;26071;11fed7f0-a508-4dc8-956a-481535c6f88a",
+        "screenshot" => file,
         "errors" => nil
       }
     end
