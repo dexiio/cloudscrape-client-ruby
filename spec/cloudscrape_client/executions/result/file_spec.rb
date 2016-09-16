@@ -59,6 +59,18 @@ Got: FILE:;26071;11fed7f0-a508-4dc8-956a-481535c6f88a"
         )
       end
     end
+
+    context "when format is unknown" do
+      let(:value) { "FILE:not/exist;26071;11fed7f0-a508-4dc8-956a" }
+
+      let(:msg) { "not/exist" }
+
+      it "raises an error" do
+        expect { content_type }.to raise_error(
+          CloudscrapeClient::Executions::Result::File::UnknownContentType, msg
+        )
+      end
+    end
   end
 
   describe "#file_name" do

@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
+require "mime/types"
+
 class CloudscrapeClient
   class Executions
     class Result
       class File
         ParseError = Class.new(StandardError)
+        UnknownContentType = Class.new(StandardError)
 
-        DEFAULT_EXTENSION = "zip"
         FILE_KEYWORD = "FILE"
         # https://regex101.com/r/zS8xF6/1
         REGEX = %r{
@@ -36,7 +38,9 @@ class CloudscrapeClient
 
         # ContentType list http://www.freeformatter.com/mime-types-list.html
         def content_type
-          @content_type ||= find("contentType")
+          @content_type ||= MIME::Types[raw_content_type].first.tap do |result|
+            raise UnknownContentType, raw_content_type if result.nil?
+          end
         end
 
         def file_name
@@ -44,12 +48,16 @@ class CloudscrapeClient
         end
 
         def extension
-          content_type.split("/").last || DEFAULT_EXTENSION
+          content_type.preferred_extension
         end
 
         private
 
         attr_reader :value
+
+        def raw_content_type
+          @raw_content_type ||= find("contentType")
+        end
 
         def find(key)
           value.match(REGEX)[key]

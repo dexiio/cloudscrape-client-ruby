@@ -77,7 +77,7 @@ class CloudscrapeClient
                         accept: "application/json",
                         "X-CloudScrape-Access" => access_key,
                         "X-CloudScrape-Account" => account_id,
-                        content_type: content_type || DEFAULT_CONTENT_TYPE
+                        content_type: content_type.to_s || DEFAULT_CONTENT_TYPE
 
         if CloudscrapeClient.configuration.verbose
           faraday.response :logger, CloudscrapeClient.configuration.logger
