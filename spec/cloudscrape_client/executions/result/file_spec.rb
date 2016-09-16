@@ -60,4 +60,20 @@ Got: FILE:;26071;11fed7f0-a508-4dc8-956a-481535c6f88a"
       end
     end
   end
+
+  describe "#file_name" do
+    subject(:file_name) { instance.file_name }
+
+    it "returns expected file name" do
+      expect(file_name).to eq("11fed7f0-a508-4dc8-956a-481535c6f88a-26071.png")
+    end
+  end
+
+  describe "#extension" do
+    subject(:extension) { instance.extension }
+
+    it "returns expected extension" do
+      expect(extension).to eq("png")
+    end
+  end
 end

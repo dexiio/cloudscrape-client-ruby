@@ -6,6 +6,7 @@ class CloudscrapeClient
       class File
         ParseError = Class.new(StandardError)
 
+        DEFAULT_EXTENSION = "zip"
         FILE_KEYWORD = "FILE"
         # https://regex101.com/r/zS8xF6/1
         REGEX = %r{
@@ -33,8 +34,17 @@ class CloudscrapeClient
           @provider_id ||= find("providerId")
         end
 
+        # ContentType list http://www.freeformatter.com/mime-types-list.html
         def content_type
           @content_type ||= find("contentType")
+        end
+
+        def file_name
+          "#{id}-#{provider_id}.#{extension}"
+        end
+
+        def extension
+          content_type.split("/").last || DEFAULT_EXTENSION
         end
 
         private
