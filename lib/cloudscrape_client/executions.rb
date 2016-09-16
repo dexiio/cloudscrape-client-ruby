@@ -20,6 +20,15 @@ class CloudscrapeClient
       Get.new(response: response)
     end
 
+    def file(result_file)
+      dto(
+        url: "file",
+        method: :get,
+        record_id: result_file.id,
+        content_type: result_file.content_type
+      )
+    end
+
     def results
       response = dto(
         url: "result",
