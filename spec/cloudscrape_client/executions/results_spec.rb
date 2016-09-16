@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe CloudscrapeClient::Executions::Results do
+RSpec.describe CloudscrapeClient::Executions::Results do
   let(:instance) { described_class.new(response: response) }
 
   let(:response) do

@@ -2,7 +2,7 @@
 
 require "vcr_helper"
 
-describe CloudscrapeClient::Runs do
+RSpec.describe CloudscrapeClient::Runs do
   let(:instance) { described_class.new(id: id) }
 
   let(:id) { "27c719bb-f28f-49f5-aedf-dba2f8e60ba3" }

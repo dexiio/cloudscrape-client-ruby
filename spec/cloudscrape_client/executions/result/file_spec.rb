@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe CloudscrapeClient::Executions::Result::File do
+RSpec.describe CloudscrapeClient::Executions::Result::File do
   let(:instance) { described_class.new(value) }
 
   let(:value) { "FILE:image/png;26071;11fed7f0-a508-4dc8-956a-481535c6f88a" }

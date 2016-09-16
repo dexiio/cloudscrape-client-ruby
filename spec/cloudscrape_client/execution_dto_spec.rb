@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe CloudscrapeClient::ExecutionDTO do
+RSpec.describe CloudscrapeClient::ExecutionDTO do
   subject(:run) do
     described_class.for(
       url: url,

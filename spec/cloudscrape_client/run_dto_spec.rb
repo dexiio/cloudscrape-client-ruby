@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe CloudscrapeClient::RunDTO do
+RSpec.describe CloudscrapeClient::RunDTO do
   subject(:run) do
     described_class.for(
       method: :post,

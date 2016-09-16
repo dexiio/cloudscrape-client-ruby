@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe CloudscrapeClient do
+RSpec.describe CloudscrapeClient do
   let(:instance) { described_class.new }
 
   describe ".new" do
