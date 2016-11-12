@@ -46,7 +46,7 @@ RSpec.describe CloudscrapeClient::ExecutionDTO do
       expect(CloudscrapeClient::API).to receive(:get).with(
         domain: "https://api.dexi.io/",
         url: "executions/#{execution_id}/#{url}",
-        content_type: CloudscrapeClient::API::DEFAULT_CONTENT_TYPE,
+        content_type: CloudscrapeClient::DTO::DEFAULT_CONTENT_TYPE,
         options: {
           api_key: CloudscrapeClient.configuration.api_key,
           format: "json"

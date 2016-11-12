@@ -103,26 +103,8 @@ RSpec.describe CloudscrapeClient::DTO do
   describe "#content_type" do
     subject(:content_type) { instance.content_type }
 
-    it "returns nil" do
-      expect(content_type).to be_nil
-    end
-  end
-
-  describe "#content_type_or_default" do
-    subject(:content_type_or_default) { instance.content_type_or_default }
-
     it "returns default content type" do
-      expect(content_type_or_default).to eq("application/json")
-    end
-
-    context "when context type is not nil" do
-      before do
-        allow(instance).to receive(:content_type) { "image/png" }
-      end
-
-      it "returns content type" do
-        expect(content_type_or_default).to eq("image/png")
-      end
+      expect(content_type).to eq(CloudscrapeClient::DTO::DEFAULT_CONTENT_TYPE)
     end
   end
 end

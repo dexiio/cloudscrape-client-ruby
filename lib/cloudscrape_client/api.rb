@@ -10,7 +10,6 @@ class CloudscrapeClient
   class API
     InvalidApiKey = Class.new(StandardError)
     InvalidAccountId = Class.new(StandardError)
-    DEFAULT_CONTENT_TYPE = "application/json"
 
     def self.get(*args)
       new.get(*args)
@@ -32,6 +31,7 @@ class CloudscrapeClient
     def post(domain:, url:, content_type:, options: {})
       connection(domain: domain, content_type: content_type).post do |req|
         req.url URI.escape(url)
+        req.headers["Content-Type"] = content_type.to_s
         req.body = options.to_json
       end
     end
@@ -76,7 +76,7 @@ class CloudscrapeClient
                         accept: "application/json",
                         "X-CloudScrape-Access" => access_key,
                         "X-CloudScrape-Account" => account_id,
-                        content_type: content_type.to_s || DEFAULT_CONTENT_TYPE
+                        content_type: content_type.to_s
 
         if CloudscrapeClient.configuration.verbose
           faraday.use :extended_logging,

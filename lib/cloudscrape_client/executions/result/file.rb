@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "mime/types"
-
 class CloudscrapeClient
   class Executions
     class Result
