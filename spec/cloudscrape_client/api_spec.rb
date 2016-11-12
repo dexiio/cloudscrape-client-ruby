@@ -1,9 +1,16 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 RSpec.describe CloudscrapeClient::API do
   describe ".get" do
     subject(:get) do
-      described_class.get(domain: domain, url: url, options: options)
+      described_class.get(
+        domain: domain,
+        url: url,
+        content_type: "application/json",
+        options: options
+      )
     end
 
     let(:domain) { "https://example.com" }
@@ -46,7 +53,12 @@ RSpec.describe CloudscrapeClient::API do
 
   describe ".post" do
     subject(:post) do
-      described_class.post(domain: domain, url: url, options: options)
+      described_class.post(
+        domain: domain,
+        url: url,
+        content_type: "application/json",
+        options: options
+      )
     end
 
     let(:domain) { "https://example.com" }
@@ -70,7 +82,12 @@ RSpec.describe CloudscrapeClient::API do
 
   describe ".delete" do
     subject(:delete) do
-      described_class.delete(domain: domain, url: url, options: options)
+      described_class.delete(
+        domain: domain,
+        url: url,
+        content_type: "application/json",
+        options: options
+      )
     end
 
     let(:domain) { "https://example.com" }

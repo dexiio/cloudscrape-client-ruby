@@ -7,6 +7,8 @@ Wrapper for CloudScrape API.
 
 ## Requirements
 
+For dependencies see `spec.add_runtime_dependency` in the [Gemspec](./cloudscrape-client-ruby.gemspec)
+
 * Ruby `> 1.9.x`
 
 ## Installation
@@ -102,13 +104,40 @@ client.executions(execution_id).remove
 
 #### Executions (Get Result) [Docs](https://app.dexi.io/#/api/sections/executions/getResult)
 
-Methods are dynamically defined based on headers.
-
 ``` ruby
 execution = client.executions(execution_id).results
 execution.response # => { headers: [...], rows: [...] }
-execution.collection # => [ #<CloudscrapeClient::Executions::Result:0x007ffd7d132950> ]
 execution.as_hash # => [ { ... } ]
+result = execution.collection.first # => #<CloudscrapeClient::Executions::Result:0x007ffd7d132950>
+
+# Methods are dynamically defined based on headers. For example:
+result.methods.sort # => [..., :id, :screenshot]
+
+result.id # => "ae101b8f-1326-451c-ada7-3eab3c0f8a91"
+
+file = result.screenshot # => #<CloudscrapeClient::Executions::Result::File:0x007ffd7d817161>
+file.id # => "11fed7f0-a508-4dc8-956a-481535c6f88a"
+file.content_type # => "image/png"
+```
+
+#### Executions (Get Result File) [Docs](https://app.dexi.io/#/api/sections/executions/getResultFile)
+
+``` ruby
+execution.collection.first # => #<CloudscrapeClient::Executions::Result:0x007ffd7d132950>
+result_file = result.screenshot # => #<CloudscrapeClient::Executions::Result::File:0x007ffd7d817161>
+
+result_file.id # => "11fed7f0-a508-4dc8-956a-481535c6f88a"
+result_file.provider_id # => 21607
+result_file.content_type # => "image/png"
+result_file.file_name # => "<ID>-<PROVIDER_ID>.png"
+
+# Returns content of file
+content = client.executions(execution_id).file(result_file) # => "..."
+
+# Example content usage
+newFile = File.open(result_file.file_name, "w")
+newFile.write(content)
+newFile.close
 ```
 
 #### Executions (Stop) [Docs](https://app.dexi.io/#/api/sections/executions/stop)

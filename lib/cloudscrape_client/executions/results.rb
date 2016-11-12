@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CloudscrapeClient
   class Executions
     class Results

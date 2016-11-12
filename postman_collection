@@ -1,180 +1,423 @@
 {
-	"id": "929def16-e7c9-d024-873c-bd0b61ee5c46",
-	"name": "CloudScrape",
-	"description": "",
-	"order": [],
-	"folders": [
+	"variables": [],
+	"info": {
+		"name": "CloudScrape",
+		"_postman_id": "929def16-e7c9-d024-873c-bd0b61ee5c46",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "71488e93-9454-db51-8b9c-e15eb0ccfda8",
 			"name": "Executions",
 			"description": "",
-			"order": [
-				"fd463224-a926-201f-75db-8ef02b8c257b",
-				"35175ab6-cccf-b3e6-692c-6a66b8c3d30f",
-				"744fd5a4-c477-2fe8-3bbd-66646767b46d",
-				"96ea0c3f-a697-e240-e554-c056680beba4",
-				"c8d593d5-fac6-0dbf-6710-aca83c8aeecc"
-			],
-			"owner": "8933"
+			"item": [
+				{
+					"name": "Result",
+					"request": {
+						"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01/result",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CloudScrape-Access",
+								"value": "d7818ef991012e3c94e8ea3cda149936",
+								"description": ""
+							},
+							{
+								"key": "X-CloudScrape-Account",
+								"value": "a274a8b2-a664-4acb-959c-9de28644877d",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "User-Agent",
+								"value": "CS-RUBY-CLIENT/1.0",
+								"description": ""
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Get execution result. As a result can be very large it is advised that you use some method of streaming to parse the result and insert it into your data store of choice.\n\nhttps://app.cloudscrape.com/#/api/sections/executions/getResult"
+					},
+					"response": []
+				},
+				{
+					"name": "Result File",
+					"request": {
+						"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01/file/11fed7f0-a508-4dc8-956a-481535c6f88a",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CloudScrape-Access",
+								"value": "d7818ef991012e3c94e8ea3cda149936",
+								"description": ""
+							},
+							{
+								"key": "X-CloudScrape-Account",
+								"value": "a274a8b2-a664-4acb-959c-9de28644877d",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "User-Agent",
+								"value": "CS-RUBY-CLIENT/1.0",
+								"description": ""
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Get execution result file contents. Response headers includes the content-type of the file.\n\nhttps://app.cloudscrape.com/#/api/sections/executions/getResultFile"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CloudScrape-Access",
+								"value": "d7818ef991012e3c94e8ea3cda149936",
+								"description": ""
+							},
+							{
+								"key": "X-CloudScrape-Account",
+								"value": "a274a8b2-a664-4acb-959c-9de28644877d",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "User-Agent",
+								"value": "CS-RUBY-CLIENT/1.0",
+								"description": ""
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Get execution\n\nhttps://app.cloudscrape.com/#/api/sections/executions/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Stop",
+					"request": {
+						"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01/stop",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CloudScrape-Access",
+								"value": "d7818ef991012e3c94e8ea3cda149936",
+								"description": ""
+							},
+							{
+								"key": "X-CloudScrape-Account",
+								"value": "a274a8b2-a664-4acb-959c-9de28644877d",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "User-Agent",
+								"value": "CS-RUBY-CLIENT/1.0",
+								"description": ""
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Stop execution. Note that an execution does not stop immediately.\n\nhttps://app.cloudscrape.com/#/api/sections/executions/stop"
+					},
+					"response": []
+				},
+				{
+					"name": "Continue",
+					"request": {
+						"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01/continue",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CloudScrape-Access",
+								"value": "d7818ef991012e3c94e8ea3cda149936",
+								"description": ""
+							},
+							{
+								"key": "X-CloudScrape-Account",
+								"value": "a274a8b2-a664-4acb-959c-9de28644877d",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "User-Agent",
+								"value": "CS-RUBY-CLIENT/1.0",
+								"description": ""
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Continue a stopped execution. Note that the execution might not start immediately.\n\nhttps://app.cloudscrape.com/#/api/sections/executions/continue"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"url": "https://app.cloudscrape.com/api/executions/1f164370-704b-4402-bc15-ba1d00a19d01",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CloudScrape-Access",
+								"value": "d7818ef991012e3c94e8ea3cda149936",
+								"description": ""
+							},
+							{
+								"key": "X-CloudScrape-Account",
+								"value": "a274a8b2-a664-4acb-959c-9de28644877d",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "User-Agent",
+								"value": "CS-RUBY-CLIENT/1.0",
+								"description": ""
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Delete execution permanently\n\nhttps://app.cloudscrape.com/#/api/sections/executions/remove"
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"id": "1ed33673-dfe5-e160-54d8-c2d1f325cd7e",
 			"name": "Runs",
 			"description": "",
-			"order": [
-				"e505df88-7b71-2e0d-798c-8ed3321aca77",
-				"d3ecd8c7-c9cf-8c95-5d8b-5a671bfe9403"
-			],
-			"owner": "8933",
-			"collectionId": "3f32f4dc-6fea-55e9-bee8-8f5235c1065c"
-		}
-	],
-	"timestamp": 1444423682919,
-	"owner": "8933",
-	"remoteLink": "",
-	"public": false,
-	"requests": [
-		{
-			"id": "35175ab6-cccf-b3e6-692c-6a66b8c3d30f",
-			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1444436953179,
-			"name": "Get",
-			"description": "Get execution\n\nhttps://app.dexi.io/#/api/sections/executions/get",
-			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
-			"responses": [],
-			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"
-		},
-		{
-			"id": "744fd5a4-c477-2fe8-3bbd-66646767b46d",
-			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01/stop",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "POST",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1444436980442,
-			"name": "Stop",
-			"description": "Stop execution. Note that an execution does not stop immediately.\n\nhttps://app.dexi.io/#/api/sections/executions/stop",
-			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
-			"responses": [],
-			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"
-		},
-		{
-			"id": "96ea0c3f-a697-e240-e554-c056680beba4",
-			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01/continue",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "POST",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1444436996122,
-			"name": "Continue",
-			"description": "Continue a stopped execution. Note that the execution might not start immediately.\n\nhttps://app.dexi.io/#/api/sections/executions/continue",
-			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
-			"responses": [],
-			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"
-		},
-		{
-			"id": "c8d593d5-fac6-0dbf-6710-aca83c8aeecc",
-			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "DELETE",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1444437024303,
-			"name": "Remove",
-			"description": "Delete execution permanently\n\nhttps://app.dexi.io/#/api/sections/executions/remove",
-			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
-			"responses": [],
-			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"
-		},
-		{
-			"id": "d3ecd8c7-c9cf-8c95-5d8b-5a671bfe9403",
-			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://api.dexi.io/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute/inputs?connect=true",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1444566409009,
-			"name": "Execute with Input",
-			"description": "Starts new execution of run using the input from the body instead of the run itself.\n\nhttps://app.dexi.io/#/api/sections/runs/executeWithInput",
-			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
-			"responses": [],
-			"rawModeData": "{\n    \"url\": \"http://google.com\"\n}"
-		},
-		{
-			"id": "e505df88-7b71-2e0d-798c-8ed3321aca77",
-			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://api.dexi.io/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute",
-			"pathVariables": {},
-			"preRequestScript": "",
-			"method": "POST",
-			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
-			"data": [],
-			"dataMode": "params",
-			"name": "Execute",
-			"description": "Start new execution of run.\n\nhttps://app.dexi.io/#/api/sections/runs/execute",
-			"descriptionFormat": "html",
-			"time": 1444433278119,
-			"version": 2,
-			"responses": [],
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"folder": "1ed33673-dfe5-e160-54d8-c2d1f325cd7e",
-			"isFromCollection": true
-		},
-		{
-			"id": "fd463224-a926-201f-75db-8ef02b8c257b",
-			"headers": "X-CloudScrape-Access: d7818ef991012e3c94e8ea3cda149936\nX-CloudScrape-Account: a274a8b2-a664-4acb-959c-9de28644877d\nAccept: application/json\nContent-Type: application/json\nUser-Agent: CS-RUBY-CLIENT/1.0\nAccept-Encoding: UTF-8\nTransfer-Encoding: UTF-8\n",
-			"url": "https://api.dexi.io/executions/1f164370-704b-4402-bc15-ba1d00a19d01/result",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1444436918679,
-			"name": "Result",
-			"description": "Get execution result. As a result can be very large it is advised that you use some method of streaming to parse the result and insert it into your data store of choice.\n\nhttps://app.dexi.io/#/api/sections/executions/getResult",
-			"collectionId": "929def16-e7c9-d024-873c-bd0b61ee5c46",
-			"responses": [],
-			"folder": "71488e93-9454-db51-8b9c-e15eb0ccfda8"
+			"item": [
+				{
+					"name": "Execute",
+					"request": {
+						"url": "https://api.dexi.io/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CloudScrape-Access",
+								"value": "a343a30529e1f505d4fa48317",
+								"description": ""
+							},
+							{
+								"key": "X-CloudScrape-Account",
+								"value": "a274a8b2-a664-4acb-959c-9de28644877d",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "User-Agent",
+								"value": "CS-RUBY-CLIENT/1.0",
+								"description": ""
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Start new execution of run.\n\nhttps://app.cloudscrape.com/#/api/sections/runs/execute"
+					},
+					"response": []
+				},
+				{
+					"name": "Execute with Input",
+					"request": {
+						"url": "https://api.dexi.io/runs/bf04bcf8-ada8-4942-be9d-a0ffb4e29173/execute/inputs?connect=true",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CloudScrape-Access",
+								"value": "cdd66efb65d9c4aacd397b3b0b5814ca",
+								"description": ""
+							},
+							{
+								"key": "X-CloudScrape-Account",
+								"value": "a274a8b2-a664-4acb-959c-9de28644877d",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "User-Agent",
+								"value": "CS-RUBY-CLIENT/1.0",
+								"description": ""
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "UTF-8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"http://www.rightmove.co.uk/property-for-sale/property-53811409.html\"\n}"
+						},
+						"description": "Starts new execution of run using the input from the body instead of the run itself.\n\nhttps://app.cloudscrape.com/#/api/sections/runs/executeWithInput"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
-describe CloudscrapeClient::Validate do
+RSpec.describe CloudscrapeClient::Validate do
   subject(:validator) { [response].map(&CloudscrapeClient::Validate).first }
 
   let(:response) { double("Faraday::Response", status: status, body: body) }

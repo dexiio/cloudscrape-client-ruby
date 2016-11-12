@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
-describe CloudscrapeClient::Executions::Results do
+RSpec.describe CloudscrapeClient::Executions::Results do
   let(:instance) { described_class.new(response: response) }
 
   let(:response) do
@@ -45,10 +47,12 @@ describe CloudscrapeClient::Executions::Results do
     subject(:collection) { instance.collection }
 
     it "returns a collection of Result objects" do
-      expect(collection.map(&:class)).to eq([
-        CloudscrapeClient::Executions::Result,
-        CloudscrapeClient::Executions::Result
-      ])
+      expect(collection.map(&:class)).to eq(
+        [
+          CloudscrapeClient::Executions::Result,
+          CloudscrapeClient::Executions::Result
+        ]
+      )
     end
   end
 end

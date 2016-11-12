@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "cloudscrape_client/api"
 require "cloudscrape_client/validate"
 
@@ -30,6 +32,7 @@ class CloudscrapeClient
         method,
         domain: domain,
         url: endpoint,
+        content_type: content_type_or_default,
         options: {
           api_key: api_key,
           format: "json"
@@ -41,8 +44,15 @@ class CloudscrapeClient
       {}
     end
 
+    def content_type
+    end
+
+    def content_type_or_default
+      content_type || CloudscrapeClient::API::DEFAULT_CONTENT_TYPE
+    end
+
     def endpoint
-      fail NotImplementedError, "Inheriting class must implement"
+      raise NotImplementedError, "Inheriting class must implement"
     end
 
     private
