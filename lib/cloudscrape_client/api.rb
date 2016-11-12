@@ -10,7 +10,6 @@ class CloudscrapeClient
   class API
     InvalidApiKey = Class.new(StandardError)
     InvalidAccountId = Class.new(StandardError)
-
     DEFAULT_CONTENT_TYPE = "application/json"
 
     def self.get(*args)
@@ -80,7 +79,8 @@ class CloudscrapeClient
                         content_type: content_type.to_s || DEFAULT_CONTENT_TYPE
 
         if CloudscrapeClient.configuration.verbose
-          faraday.response :logger, CloudscrapeClient.configuration.logger
+          faraday.use :extended_logging,
+                      logger: CloudscrapeClient.configuration.logger
         end
 
         faraday.response :multi_json,
