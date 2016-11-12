@@ -21,7 +21,7 @@ class CloudscrapeClient
     end
 
     def content_type
-      options[:content_type]
+      options[:content_type] || super
     end
   end
 end

@@ -5,6 +5,8 @@ require "cloudscrape_client/validate"
 
 class CloudscrapeClient
   class DTO
+    DEFAULT_CONTENT_TYPE = MIME::Types["application/json"].first
+
     attr_reader :options
 
     def initialize(options:)
@@ -32,7 +34,7 @@ class CloudscrapeClient
         method,
         domain: domain,
         url: endpoint,
-        content_type: content_type_or_default,
+        content_type: content_type,
         options: {
           api_key: api_key,
           format: "json"
@@ -45,10 +47,7 @@ class CloudscrapeClient
     end
 
     def content_type
-    end
-
-    def content_type_or_default
-      content_type || CloudscrapeClient::API::DEFAULT_CONTENT_TYPE
+      DEFAULT_CONTENT_TYPE
     end
 
     def endpoint
