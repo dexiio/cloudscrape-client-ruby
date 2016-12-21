@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CloudscrapeClient
   class Validate
     def initialize(response:)
@@ -13,8 +15,8 @@ class CloudscrapeClient
     end
 
     def validate
-      fail CloudscrapeClient::InternalServerError, message if internal_error?
-      fail CloudscrapeClient::NotFound, message if not_found?
+      raise CloudscrapeClient::InternalServerError, message if internal_error?
+      raise CloudscrapeClient::NotFound, message if not_found?
 
       true
     end

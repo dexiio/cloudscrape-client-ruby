@@ -1,3 +1,19 @@
+## 0.5.0 (2016-09-16)
+
+Features:
+
+  - Added GetResultFile endpoint support
+
+Bugfixes:
+
+  - Correctly parse files in response
+
+## 0.4.0 (2016-05-15)
+
+Bugfixes:
+
+  - Change Domain to Dexi.io
+
 ## 0.3.0 (2016-03-23)
 
 Features:

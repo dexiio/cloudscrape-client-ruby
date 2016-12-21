@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 require "logger"
+require "mime/types"
 
 require "cloudscrape_client/version"
 require "cloudscrape_client/configuration"

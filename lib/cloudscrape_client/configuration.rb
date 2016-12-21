@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CloudscrapeClient
   module Configure
     def configuration
@@ -9,8 +11,6 @@ class CloudscrapeClient
       configuration
     end
 
-    private
-
     class Configuration
       attr_accessor :base_url,
                     :api_key,
@@ -21,7 +21,7 @@ class CloudscrapeClient
                     :verbose,
                     :logger
 
-      def initialize # rubocop:disable Metrics/AbcSize
+      def initialize
         self.base_url = base_url_default
         self.user_agent_app = user_agent_app_default
         self.user_agent_version = user_agent_version_default

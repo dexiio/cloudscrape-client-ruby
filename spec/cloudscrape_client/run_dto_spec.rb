@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
-describe CloudscrapeClient::RunDTO do
+RSpec.describe CloudscrapeClient::RunDTO do
   subject(:run) do
     described_class.for(
       method: :post,
@@ -20,6 +22,7 @@ describe CloudscrapeClient::RunDTO do
     expect(CloudscrapeClient::API).to receive(:post).with(
       domain: "https://api.dexi.io/",
       url: "runs/#{id}/#{url}?connect=true",
+      content_type: CloudscrapeClient::DTO::DEFAULT_CONTENT_TYPE,
       options: {
         api_key: CloudscrapeClient.configuration.api_key,
         format: "json",
