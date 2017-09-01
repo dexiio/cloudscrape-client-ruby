@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.dexi.io/executions/ae101b8f-1326-451c-ada7-3eab3c0f8a91/file/11fed7f0-a508-4dc8-956a-481535c6f88a?api_key=<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>&format=json
+    uri: https://api.dexi.io/executions/ae101b8f-1326-451c-ada7-3eab3c0f8a91/file/11fed7f0-a508-4dc8-956a-481535c6f88a
     body:
       encoding: US-ASCII
       string: ''

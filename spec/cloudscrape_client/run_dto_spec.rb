@@ -24,8 +24,6 @@ RSpec.describe CloudscrapeClient::RunDTO do
       url: "runs/#{id}/#{url}?connect=true",
       content_type: CloudscrapeClient::DTO::DEFAULT_CONTENT_TYPE,
       options: {
-        api_key: CloudscrapeClient.configuration.api_key,
-        format: "json",
         url: input[:url]
       }
     ) { response }

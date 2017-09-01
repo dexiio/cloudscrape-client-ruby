@@ -27,5 +27,17 @@ RSpec.describe CloudscrapeClient::Runs do
         end
       end
     end
+
+    context "when bulk" do
+      subject(:execute) { instance.execute(input: input) }
+
+      let(:input) { [{ url: "http://www.google.com" }] }
+
+      it "calls off to RunDTO and returns" do
+        VCR.use_cassette("valid/runs/execute_bulk") do
+          expect(execute).to eq("5226842f-175c-492f-835a-1f822676f10b")
+        end
+      end
+    end
   end
 end

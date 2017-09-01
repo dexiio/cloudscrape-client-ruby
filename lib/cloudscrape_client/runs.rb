@@ -20,13 +20,12 @@ class CloudscrapeClient
 
   private
     def url(input)
-      case input
-      when Array
-        "execute/bulk"
-      when Hash
-        "execute/inputs"
-      else
+      if input.empty?
         "execute"
+      elsif input.is_a?(Array)
+        "execute/bulk"
+      else
+        "execute/inputs"
       end
     end
   end
