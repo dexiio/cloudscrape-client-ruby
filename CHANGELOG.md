@@ -1,3 +1,9 @@
+## 0.5.2 (2017-09-01)
+
+Features:
+
+  - Added executeBulk endpoint support for runs
+
 ## 0.5.0 (2016-09-16)
 
 Features:
