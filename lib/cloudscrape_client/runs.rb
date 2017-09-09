@@ -11,11 +11,23 @@ class CloudscrapeClient
     def execute(input: {}, connect: false)
       RunDTO.for(
         id: @id,
-        url: (input.empty? ? "execute" : "execute/inputs"),
+        url: url(input),
         input: input,
         connect: connect,
         method: :post
       ).fetch(:_id)
+    end
+
+    private
+
+    def url(input)
+      if input.empty?
+        "execute"
+      elsif input.is_a?(Array)
+        "execute/bulk"
+      else
+        "execute/inputs"
+      end
     end
   end
 end

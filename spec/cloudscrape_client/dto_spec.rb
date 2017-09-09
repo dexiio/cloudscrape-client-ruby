@@ -24,10 +24,7 @@ RSpec.describe CloudscrapeClient::DTO do
         domain: domain,
         url: endpoint,
         content_type: "application/json",
-        options: {
-          api_key: CloudscrapeClient.configuration.api_key,
-          format: "json"
-        }
+        options: {}
       ) { response }
 
       expect(subject).to eq({})
@@ -50,10 +47,7 @@ RSpec.describe CloudscrapeClient::DTO do
         domain: domain,
         url: endpoint,
         content_type: "application/json",
-        options: {
-          api_key: CloudscrapeClient.configuration.api_key,
-          format: "json"
-        }
+        options: {}
       ) { response }
 
       expect(subject).to eq({})
@@ -76,10 +70,7 @@ RSpec.describe CloudscrapeClient::DTO do
         domain: domain,
         url: endpoint,
         content_type: "application/json",
-        options: {
-          api_key: CloudscrapeClient.configuration.api_key,
-          format: "json"
-        }
+        options: {}
       ) { response }
 
       expect(subject).to eq({})

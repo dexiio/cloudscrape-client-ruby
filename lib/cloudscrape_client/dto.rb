@@ -35,10 +35,7 @@ class CloudscrapeClient
         domain: domain,
         url: endpoint,
         content_type: content_type,
-        options: {
-          api_key: api_key,
-          format: "json"
-        }.merge(params)
+        options: params
       ).tap(&CloudscrapeClient::Validate).body
     end
 

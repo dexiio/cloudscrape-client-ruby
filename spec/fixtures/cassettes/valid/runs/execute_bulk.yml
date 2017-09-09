@@ -1,22 +1,22 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.dexi.io/executions/3a8ea1f2-6781-4371-841f-66f6210a27b9/
+    method: post
+    uri: https://api.dexi.io/runs/27c719bb-f28f-49f5-aedf-dba2f8e60ba3/execute/bulk?connect=false
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"api_key":"<CLOUD_SCRAPE_CLIENT_API_KEY_OVERRIDE>","format":"json","url":"http://www.google.com"}'
     headers:
       User-Agent:
-      - CS-RUBY-CLIENT/1.0 (ChuckJHardy; Chuck; 58234) ruby/2.2.3 (173; x86_64-darwin14)
+      - CS-RUBY-CLIENT/1.0 (Charless-Air; Chuck; 26883) ruby/2.2.1 (85; x86_64-darwin15)
+      Content-Type:
+      - application/json
       Accept:
       - application/json
       X-Cloudscrape-Access:
       - d7818ef991012e3c94e8ea3cda149936
       X-Cloudscrape-Account:
       - "<CLOUD_SCRAPE_CLIENT_ACCOUNT_ID_OVERRIDE>"
-      Content-Type:
-      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -27,19 +27,19 @@ http_interactions:
       X-Powered-By:
       - Express
       Date:
-      - Sat, 10 Oct 2015 00:18:59 GMT
+      - Fri, 16 Oct 2015 17:44:10 GMT
       Content-Type:
       - application/json
       Vary:
       - Accept-Encoding, User-Agent
       Set-Cookie:
-      - cssesid=s%3AnijJ6ROF2fNWLSSTMQTfIQxVaGvqchBs.hgbKDyRGBaBYzsvf5ZwlC2DP08EhecQwccdxA4dyQsw;
+      - cssesid=s%3A_TX26BJe8-w2w-D8MNWjdoeFG-DXvAZc.9rsbSUY6t3ttAf5NtDBgN7gxi6wzHgdN3Tq80lrhnXw;
         Path=/
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"_id":"3a8ea1f2-6781-4371-841f-66f6210a27b9","state":"OK","starts":1444436313493,"finished":1444436317128}'
+      string: '{"_id":"5226842f-175c-492f-835a-1f822676f10b","state":"PENDING","starts":1445017450586,"finished":null}'
     http_version: 
-  recorded_at: Sat, 10 Oct 2015 00:18:58 GMT
+  recorded_at: Fri, 16 Oct 2015 17:44:11 GMT
 recorded_with: VCR 2.9.3

@@ -84,6 +84,14 @@ When `connect: true` is passed execution will upload it's result to configured i
 execution_id = client.runs(run_id).execute(input: { url: 'http://google.com' }, connect: true)
 ```
 
+#### Runs (Execute Bulk) [Docs](https://app.dexi.io/#/api/sections/runs/executeBulk)
+
+When `connect: true` is passed execution will upload it's result to configured integrations for this run.
+
+``` ruby
+execution_id = client.runs(run_id).execute(input: [{ url: 'http://google.com' },{ url: 'http://bbc.com' }], connect: true)
+```
+
 #### Executions (Get) [Docs](https://app.dexi.io/#/api/sections/executions/get)
 
 ``` ruby

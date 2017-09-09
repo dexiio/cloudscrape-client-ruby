@@ -24,10 +24,7 @@ RSpec.describe CloudscrapeClient::ExecutionDTO do
       domain: "https://api.dexi.io/",
       url: "executions/#{execution_id}/#{url}/#{record_id}",
       content_type: content_type,
-      options: {
-        api_key: CloudscrapeClient.configuration.api_key,
-        format: "json"
-      }
+      options: {}
     ) { response }
 
     expect(run).to eq({})
@@ -47,10 +44,7 @@ RSpec.describe CloudscrapeClient::ExecutionDTO do
         domain: "https://api.dexi.io/",
         url: "executions/#{execution_id}/#{url}",
         content_type: CloudscrapeClient::DTO::DEFAULT_CONTENT_TYPE,
-        options: {
-          api_key: CloudscrapeClient.configuration.api_key,
-          format: "json"
-        }
+        options: {}
       ) { response }
 
       expect(run).to eq({})
