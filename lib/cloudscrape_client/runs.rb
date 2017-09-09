@@ -18,7 +18,8 @@ class CloudscrapeClient
       ).fetch(:_id)
     end
 
-  private
+    private
+
     def url(input)
       if input.empty?
         "execute"
