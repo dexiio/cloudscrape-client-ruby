@@ -25,7 +25,7 @@ class CloudscrapeClient
 
       def define_method_for_header
         lambda do |key, value|
-          self.class.send(:define_method, key) do
+          define_singleton_method(key) do
             value.to_s.include?(File::FILE_KEYWORD) ? File.new(value) : value
           end
         end
