@@ -5,13 +5,13 @@ require "spec_helper"
 RSpec.describe CloudscrapeClient::Executions::Result::File do
   let(:instance) { described_class.new(value) }
 
-  let(:value) { "FILE:image/png;26071;11fed7f0-a508-4dc8-956a-481535c6f88a" }
+  let(:value) { "FILE:image/png;26071;testaccount/11fed7f0-a508-4dc8-956a-481535c6f88a" }
 
   describe "#id" do
     subject(:id) { instance.id }
 
     it "returns id parsed from value" do
-      expect(id).to eq("11fed7f0-a508-4dc8-956a-481535c6f88a")
+      expect(id).to eq("testaccount/11fed7f0-a508-4dc8-956a-481535c6f88a")
     end
 
     context "when id is not found" do
@@ -77,7 +77,7 @@ Got: FILE:;26071;11fed7f0-a508-4dc8-956a-481535c6f88a"
     subject(:file_name) { instance.file_name }
 
     it "returns expected file name" do
-      expect(file_name).to eq("11fed7f0-a508-4dc8-956a-481535c6f88a-26071.png")
+      expect(file_name).to eq("testaccount/11fed7f0-a508-4dc8-956a-481535c6f88a-26071.png")
     end
   end
 
