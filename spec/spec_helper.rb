@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "simplecov"
+require 'pry'
 
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require "cloudscrape_client"

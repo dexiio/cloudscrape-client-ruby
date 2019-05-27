@@ -54,5 +54,11 @@ RSpec.describe CloudscrapeClient::Executions::Results do
         ]
       )
     end
+
+    it "returns the right values for each Result object" do
+      expect(collection.map(&:name)).to eq ["Chuck", "James"]
+      expect(collection.map(&:age)).to eq [31, 26]
+      expect(collection.map(&:location)).to eq ["Manchester", "London"]
+    end
   end
 end
