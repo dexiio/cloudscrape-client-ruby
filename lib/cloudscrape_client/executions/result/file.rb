@@ -17,7 +17,7 @@ class CloudscrapeClient
           ;                        # first split
           (?'providerId'\d+)       # Dexi provider id
           ;                        # second split
-          (?'id'[a-z0-9-\/]*)      # file id
+          (?'id'[a-z0-9\-\/]*)     # file id
           \Z                       # end of line
         }x
         EXPECTED_FORMAT = "FILE:<CONTENT_TYPE>;<PROVIDER_ID>;<FILE_ID>"
